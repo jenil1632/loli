@@ -2,6 +2,7 @@ const express = require('express');
 const {searchengine} = require('./searchengine.js');
 const _ = require('lodash');
 
+const port = process.env.PORT || 3000;
 let app = express();
 app.use(express.static(__dirname+"/../public"));
 app.get('/categories.js', (req, res)=>{
@@ -19,4 +20,4 @@ app.get('/categories.js', (req, res)=>{
   }
   res.send(_.uniqBy(searchresults, 'value'));
 });
-app.listen(3000);
+app.listen(port);
