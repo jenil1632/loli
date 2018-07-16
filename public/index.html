@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Loli - The Local Listing App</title>
+  <meta name = "description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/loli-logo.svg" type="image/svg" sizes="16x16">
+  <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <header>
+    <div id = "top-bar">
+    <h4 id ="account">Account</h4>
+    <select id ="language">
+      <option value="English" selected>English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    </div>
+  </header>
+  <div id = "banner">
+    <h4 class = "heading" style="padding-top: 2em">Welcome to</h4>
+    <img src="img/loli-logo.png" alt="Loli logo" width="100" height="100" id = "loli-logo"/>
+    <h3 class ="heading" style="padding-bottom: 1em">The Local Listing App</h3>
+    <div id = "banner-bar">
+    <div id ="custom-select">
+    <select id = "city">
+      <option value="Mumbai">Mumbai</option>
+      <option value="Pune">Pune</option>
+    </select>
+  </div>
+  <div id = "main-search">
+    <input type="text" placeholder="What are you looking for?" id ="searchbar" autocomplete="off"/>
+    <h5 id = "tip">Eg. Baker, Tutor, Photographer, Tiffin Service, Babycare.</h5>
+  </div>
+    <button id = "search"><strong>SEARCH</strong></button>
+  </div>
+</div>
+  <div id = "container">
+    <h3 class = "container-headings" style="margin-bottom:0; padding-bottom: 0.5em;">Searching</h3>
+    <div id = "quickselect">
+    <button>Around Me</button>
+    <button>Products</button>
+    <button>Services</button>
+  </div>
+  <h3 class = "container-headings" style="padding-bottom: 1em">Search by Category</h3>
+  <div id ="categories">
+    <div class = "category">
+      <img src = "img/placeholder.png" alt="Food and beverages">
+      <h4>Food and Beverages</h4>
+    </div>
+  <div class = "category">
+    <img src = "img/placeholder.png" alt="Hand made products">
+    <h4>Hand made Products</h4>
+  </div>
+  <div class = "category">
+    <img src = "img/placeholder.png" alt="Wedding and events">
+    <h4>Wedding and Events</h4>
+  </div>
+  <div class = "category">
+    <img src = "img/placeholder.png" alt="Personal care">
+    <h4>Personal Care</h4>
+  </div>
+  <div class = "category">
+    <img src = "img/placeholder.png" alt="Tutors">
+    <h4>Tutors</h4>
+  </div>
+  <div class = "category">
+    <img src = "img/placeholder.png" alt="Proffesionals">
+    <h4>Proffesionals</h4>
+  </div>
+  </div>
+</div>
+<footer>
+  <div id = "footer-nav">
+  <div id = "links">
+    <div id = "left-container">
+    <a href="">About Us</a>
+    <a href="">Feedback</a>
+    <a href="">Contact</a>
+  </div>
+    <div id = "right-container">
+    <a href="">Register as Seller</a>
+    <a href="">Advertise with Loli</a>
+    <a href="">Blogs</a>
+  </div>
+  </div>
+  <div id = "social-media">
+    <img src ="img/social-fb.svg" alt="facebook"/>
+    <img src ="img/social-instagram.svg" alt="instagram"/>
+    <img src ="img/social-youtube.svg" alt="youtube"/>
+    <img src ="img/social-twitter.svg" alt="twitter"/>
+  </div>
+</div>
+  <hr id = "separator">
+  <div style = "background: #e6e7e8; overflow: auto">
+  <p id ="disclaimer">By continuing past this page, you agree to our Terms of Service, Cookie policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners.<br>
+  &copy; 2018 The Local Listing App. All rights reserved.</p>
+</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/searchresults.js"></script>
+</body>
+</html>

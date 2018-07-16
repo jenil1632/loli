@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Signup | Loli - The Local Listing App</title>
+  <meta name = "description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/loli-logo.svg" type="image/svg" sizes="16x16">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <header>
+    <div id = "top-bar">
+      <img src = "img/loli-logo.svg" alt = "Loli logo" height="40" width="40" id = "loli-logo"/>
+    <h4 id ="heading">The Local Listing App</h4>
+    <select id ="language">
+      <option value="English" selected>English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    </div>
+  </header>
+  <div id = "container">
+    <h3 class = "sub-headings">Sign up</h3>
+    <div class = "twobuttons">
+    <button style="color: white; background: #3b5998; margin-right: 0.5em">Sign up with Facebook</button>
+    <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71">Sign up with Google</button>
+  </div>
+  <h3 class = "sub-headings">Or</h3>
+  <form action="">
+    <input type="text" name="username" placeholder="Username" required/>
+    <input type="email" name="emailid" placeholder="Email id" required/>
+    <input type="password" name="password" placeholder="Password" required/>
+    <input type="password" name="confirmpassword" placeholder="Confirm password" required/>
+    <div id = "cover">
+    <input type="checkbox" name="termsandconditions" required /><span style="font-size: 14px">By creating an account, I agree to Loli's <a href="">Terms of Service</a>, <a href="">Cookie policy</a>, <a href="">Privacy policy</a> and <a href="">Content policy</a>.</span>
+  </div>
+    <button type="submit">SIGN UP</button>
+  </form>
+  <p style="text-align: center">Already have an account? <a href="">Login here</a>.</p>
+    <button type="button" class = "vendorsignup">VENDOR SIGN UP</button>
+</div>
+<footer>
+  <div id = "footer-nav">
+  <div id = "links">
+    <div id = "left-container">
+    <a href="">About Us</a>
+    <a href="">Feedback</a>
+    <a href="">Contact</a>
+  </div>
+    <div id = "right-container">
+    <a href="">Register as Seller</a>
+    <a href="">Advertise with Loli</a>
+    <a href="">Blogs</a>
+  </div>
+  </div>
+  <div id = "social-media">
+    <img src ="img/social-fb.svg" alt="facebook"/>
+    <img src ="img/social-instagram.svg" alt="instagram"/>
+    <img src ="img/social-youtube.svg" alt="youtube"/>
+    <img src ="img/social-twitter.svg" alt="twitter"/>
+  </div>
+</div>
+  <hr id = "separator">
+  <div style = "background: #e6e7e8; overflow: auto">
+  <p id ="disclaimer">All trademarks are propertirs of their respective owners.<br>
+  &copy; 2018 The Local Listing App. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

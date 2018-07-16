@@ -1,0 +1,228 @@
+@font-face {
+  font-family: Gotham;
+  src: url('../fonts/GothamBold.ttf');
+}
+@font-face {
+  font-family: Gotham-book;
+  src: url('../fonts/GothamBook.ttf');
+}
+*{
+  box-sizing: border-box;
+  font-family: Gotham-book;
+}
+
+header{
+  background: #f1f2f2;
+}
+
+#loli-logo{
+  margin-left: 1em;
+  margin-right: 0.5em;
+}
+
+#heading{
+  color: #6d6e71;
+  font-family: Gotham;
+  text-align: center;
+}
+
+#language{
+  padding: 0.25em 0.5em;
+  color: #6d6e71;
+  border-radius: 5px;
+  box-shadow: 0 0 1px #6d6e71;
+  margin-right: 0.5em;
+}
+
+#container{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.sub-headings{
+  text-align: center;
+  color: #414042;
+  font-family: Gotham;
+}
+
+.twobuttons button{
+  border: none;
+  cursor: pointer;
+  padding: 1em 0.5em;
+  border-radius: 10px;
+}
+
+form{
+  width: 95%;
+  margin: 0 auto;
+}
+
+input{
+  background-color: #f1f2f2;
+  border: none;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  padding-left: 0.75em;
+  border-radius: 5px;
+  margin: 0.5em auto 0.5em;
+  width: 95%;
+  display: block;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 1em;
+}
+
+#cover{
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+}
+
+#forgotpassword{
+  margin-left: auto; color: #d63322; text-decoration: none; font-size: 14px; margin-top: 8px; display: inline-block;
+}
+
+form a{
+  color: black;
+}
+
+button[type="submit"]{
+  color: white;
+  background: #d63322;
+  border: none;
+  cursor: pointer;
+  padding: 1em 4em;
+  border-radius: 5px;
+  box-shadow: 0 8px 6px -4px #a8190e;
+  font-size: 16px;
+  display: block;
+  margin: 1em auto 2em;
+  font-family: Gotham;
+}
+
+p a{
+  color: black;
+  text-decoration: none;
+}
+
+form p a{
+  color: black;
+  text-decoration: underline;
+}
+
+.vendorsignup{
+  color: white;
+  background: #6d6e71;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1em 2em;
+  box-shadow: 0 8px 6px -4px #414042;
+  font-size: 16px;
+  display: block;
+  margin: 1em auto 2em;
+  font-family: Gotham;
+}
+
+.vendorsignuplogin{
+  color: white;
+  background: #6d6e71;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px !important;
+  box-shadow: 0 8px 6px -4px #414042;
+  font-size: 16px;
+  display: block;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  font-family: Gotham;
+}
+
+#links{
+  display: none;
+  padding-top: 1.5em;
+}
+
+footer{
+  background: #f1f2f2;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+
+footer img{
+  height: 35px;
+  width: 35px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#social-media{
+  padding-top: 1.5em;
+}
+
+#separator{
+  display: none;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+footer p{
+  text-align: center;
+  font-size: 0.85em;
+  max-width: 1080px;
+  margin: 16px auto;
+}
+
+#links a{
+  text-decoration: none;
+  color: #6d6e71;
+  display: block;
+  padding: 0.25em;
+}
+
+#footer-nav{
+  padding-bottom: 0.5em;
+}
+
+
+/*media queries*/
+@media(min-width: 768px) {
+  #loli-logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+  }
+
+  #heading{
+    font-size: 1.2em;
+  }
+
+  .twobuttons button{
+    margin-left: 1em ;
+    margin-right: 1em ;
+  }
+
+  input{
+    width: 50%;
+    max-width: 400px;
+  }
+
+  #cover{
+    width: 50%;
+    max-width: 400px
+  }
+
+  form p{
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .vendorsignuplogin{
+    padding: 1em 2em !important;
+  }
+}

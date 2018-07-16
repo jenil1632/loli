@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login | Loli - The Local Listing App</title>
+  <meta name = "description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/loli-logo.svg" type="image/svg" sizes="16x16">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <header>
+    <div id = "top-bar">
+      <img src = "img/loli-logo.svg" alt = "Loli logo" height="40" width="40" id = "loli-logo"/>
+    <h4 id ="heading">The Local Listing App</h4>
+    <select id ="language">
+      <option value="English" selected>English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    </div>
+  </header>
+  <div id = "container">
+    <h3 class = "sub-headings">Log in</h3>
+    <div class = "twobuttons">
+    <button style="color: white; background: #3b5998; margin-right: 0.5em">Log in with Facebook</button>
+    <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71">Log in with Google</button>
+  </div>
+  <h3 class = "sub-headings">Or</h3>
+  <form action="">
+    <input type="text" name="username" placeholder="Username" required/>
+    <input type="password" name="password" placeholder="Password" required/>
+    <div id = "cover" style="display: flex">
+    <input type="checkbox" name="termsandconditions" required style = "margin-left: 0; margin-right: 4px"/><span style="font-size: 14px; margin-top: 8px; display: inline-block">Remember me</span>
+    <a href="" id = "forgotpassword">Forgot Password?</a>
+  </div>
+    <button type="submit">LOGIN</button>
+    <p style="font-size: 14px; text-align: center; width: 95%">By logging in, you agree to Loli's <a href="">Terms of Service</a>, <a href="">Cookie policy</a>, <a href="">Privacy policy</a> and <a href="">Content policy</a>.</p>
+  </form>
+  <h3 class = "sub-headings">New to Loli?</h3>
+  <div class = "twobuttons" style="padding-bottom: 3em">
+  <button type="button" class = "vendorsignuplogin">GUEST SIGN UP</button>
+  <button type="button" class = "vendorsignuplogin">VENDOR SIGN UP</button>
+</div>
+</div>
+<footer>
+  <div id = "footer-nav">
+  <div id = "links">
+    <div id = "left-container">
+    <a href="">About Us</a>
+    <a href="">Feedback</a>
+    <a href="">Contact</a>
+  </div>
+    <div id = "right-container">
+    <a href="">Register as Seller</a>
+    <a href="">Advertise with Loli</a>
+    <a href="">Blogs</a>
+  </div>
+  </div>
+  <div id = "social-media">
+    <img src ="img/social-fb.svg" alt="facebook"/>
+    <img src ="img/social-instagram.svg" alt="instagram"/>
+    <img src ="img/social-youtube.svg" alt="youtube"/>
+    <img src ="img/social-twitter.svg" alt="twitter"/>
+  </div>
+</div>
+  <hr id = "separator">
+  <div style = "background: #e6e7e8; overflow: auto">
+  <p id ="disclaimer">All trademarks are propertirs of their respective owners.<br>
+  &copy; 2018 The Local Listing App. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

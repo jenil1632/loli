@@ -1,0 +1,31 @@
+.autocomplete-items{
+  background: white;
+  cursor: pointer;
+  padding: 0.65em 0.75em;
+}
+
+.autocomplete-items:hover{
+  background-color: #e6e7e8;
+}
+
+.selected{
+  background-color: #e6e7e8;
+}
+
+#wrapper{
+  position: absolute;
+  width: 75%;
+  left: 0px;
+  top: 38.7px;
+  z-index: 99;
+  margin-left: calc((25%)/2);
+}
+
+@media (min-width: 768px){
+  #wrapper{
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+  }
+}
