@@ -49,7 +49,7 @@ let categories = {
       "diamond": ["bangles", "bracelets", "earrings", "necklaces", "pendants", "rings"]
     },
     "food & beverages": ["home made farsan", "tiffin/dabba"],
-    "hotels": ["#"],
+    "hotels": ["nearby"],
     "lifestyle": ["wristwatches, sunglasses", "perfume", "shoes", "belts", "wallets", "purses", "school bags", "luggage bags", "music instruments"],
     "health": ["beauty parlours", "salons", "spa", "ayurvedic products", "face care creams", "trimmers", "deodrants", "hair creams", "supplements/diet food"],
     "daily needs": ["groceries", "chemists", "stationary"],
@@ -74,7 +74,7 @@ let categories = {
       "language classes": ["english", "hindi", "french", "chinese", "spanish", "german", "japanese"],
       "training institute": ["engineering drawing", "programming languages", "multimedia and design"]
     },
-    "entertainment": ["#"],
+    "entertainment": ["nearby"],
     "event organizer": {
       "caterers": ["veg", "non-veg", "wedding", "birthday party", "party", "corporate"],
       "banquets": ["ac halls", "lawn events"],
@@ -103,8 +103,8 @@ let categories = {
     "party": ["dj on hire", "party planner", "cateres", "playback singer", "photographers", "choreographer"],
     "personal care": ["bridal makeup", "bridgroom makeup", "massage for men", "massage for women", "accupuncture", "hairstyling & makeup"],
     "pet care": ["pet accessories", "pet food", "pet shop", "vet"],
-    "playschool": ["#"],
-    "resteraunts": ["#"],
+    "playschool": ["nearby"],
+    "resteraunts": ["nearby"],
     "security & legal": ["bodyguards", "cctv", "security service", "lawyers"],
     "sports coaching": ["athletics", "basketball", "badminton", "boxing", "chess", "cricket", "football", "gymnastics", "hockey", "judo", "karate", "squash", "swimming", "table tennis", "tennis", "skating", "volleyball"],
     "wedding": ["mehendi artist", "wedding planner", "photographer", "choreographer", "makeup artist", "caterer", "florists", "decorators", "fireworks", "banquets"],
