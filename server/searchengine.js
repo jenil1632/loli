@@ -6,91 +6,107 @@ const {categories} = require('./categories.js');
   let searchresults = [];
   for(let key in categories[choice])
   {
+    let skip = false;
     if(key.startsWith(svalue))
     {
-      let obj = {
-        "value": key,
-        "priority": 1
+      if(Array.isArray(categories[choice][key]))
+      {
+        getArrayElements(categories[choice][key], searchresults, key, 1);
+        skip = true;
       }
-      searchresults.push(obj);
+      else
+      {
+        getArrayElements(Object.keys(categories[choice][key]), searchresults, key, 1);
+        skip = true;
+      }
     }
     else if(key.includes(svalue))
     {
-      let obj = {
-        "value": key,
-        "priority": 2
+      if(Array.isArray(categories[choice][key]))
+      {
+        getArrayElements(categories[choice][key], searchresults, key, 2);
+        skip = true;
       }
-      searchresults.push(obj);
+      else
+      {
+        getArrayElements(Object.keys(categories[choice][key]), searchresults, key, 2);
+        skip = true;
+      }
     }
     if(Array.isArray(categories[choice][key]))
     {
-      for(let j=0; j<categories[choice][key].length; j++)
+      if(skip==false)
       {
-        if(categories[choice][key][j].startsWith(svalue)&&categories[choice][key][j]!=(key))
+      categories[choice][key].forEach((element)=>{
+        if(element.startsWith(svalue))
         {
           let obj = {
             "sub1": key,
-            "value": categories[choice][key][j],
+            "value": element,
             "priority": 1
           };
           searchresults.push(obj);
         }
-        else if(categories[choice][key][j].includes(svalue)&&categories[choice][key][j]!=(key))
+        else if(element.includes(svalue))
         {
           let obj = {
             "sub1": key,
-            "value": categories[choice][key][j],
+            "value": element,
             "priority": 2
           };
           searchresults.push(obj);
         }
-      }
+      });
     }
+  }
     else{
       for(let subkey in categories[choice][key])
       {
+        let skipsub = false;
         if(subkey.startsWith(svalue)){
-          let obj2 = {
-            "sub1": key,
-            "value": subkey,
-            "priority": 1
-          };
-          searchresults.push(obj2);
+            getArrayElements(categories[choice][key][subkey], searchresults, subkey, 1);
+            skipsub = true;
         }
         else if(subkey.includes(svalue))
         {
-          let obj2 = {
-            "sub1": key,
-            "value": subkey,
-            "priority": 2
-          };
-          searchresults.push(obj2);
+          getArrayElements(categories[choice][key][subkey], searchresults, subkey, 2);
+          skipsub = true;
         }
-        for(let k=0; k<categories[choice][key][subkey].length;k++)
-        {
-          if(categories[choice][key][subkey][k].startsWith(svalue)&&categories[choice][key][subkey][k]!=(subkey))
+        categories[choice][key][subkey].forEach((element)=>{
+          if(element.startsWith(svalue)&&skipsub==false)
           {
             let obj2 = {
               "sub1": subkey,
-              "value": categories[choice][key][subkey][k],
+              "value": element,
               "priority": 1
             };
             searchresults.push(obj2);
           }
-          else if(categories[choice][key][subkey][k].includes(svalue)&&categories[choice][key][subkey][k]!=(subkey))
+          else if(element.includes(svalue)&&skipsub==false)
           {
             let obj2 = {
               "sub1": subkey,
-              "value": categories[choice][key][subkey][k],
+              "value": element,
               "priority": 2
             };
             searchresults.push(obj2);
           }
-        }
+        });
       }
     }
   }
   return searchresults;
+}
+
+function getArrayElements(arr, searchresults, key, pr){
+  arr.forEach((element)=>{
+    let obj = {
+      "sub1": key,
+      "value": element,
+      "priority": pr
+    };
+    searchresults.push(obj);
+  });
 }
 
 module.exports = {searchengine};
