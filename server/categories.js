@@ -108,7 +108,7 @@ let categories = {
     "security & legal": ["bodyguards", "cctv", "security service", "lawyers"],
     "sports coaching": ["athletics", "basketball", "badminton", "boxing", "chess", "cricket", "football", "gymnastics", "hockey", "judo", "karate", "squash", "swimming", "table tennis", "tennis", "skating", "volleyball"],
     "wedding": ["mehendi artist", "wedding planner", "photographer", "choreographer", "makeup artist", "caterer", "florists", "decorators", "fireworks", "banquets"],
-    "business & taxes": ["ca/cs", "graphic designer", "gst services", "digital markeing", "advertising"]
+    "business & taxes": ["ca/cs", "graphic designer", "gst services", "digital marketing", "advertising"]
   }
 }
 
