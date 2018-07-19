@@ -23,7 +23,7 @@ let categories = {
     "books": ["literature & fiction", "children & young adult", "textbooks", "non-fiction", "business & economics", "other books"],
     "sports goods": ["fitness", "camping & hiking", "indoor games", "swimming", "cricket", "football", "tennis", "badminton", "pool & snooker", "table tennis", "other sports"],
     "fashion & clothing": {
-      "kids": ["kids"],
+      "kids": ["jeans", "t-shirts"],
       "men": ["casuals", "formals", "innerwear", "party wear", "ethinic wear"],
       "women": ["casuals", "formals", "innerwear", "party wear", "ethinic wear"],
       "clothing accessories": ["clothing accessories"]

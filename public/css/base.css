@@ -1,14 +1,6 @@
-@font-face {
-  font-family: Gotham;
-  src: url('../fonts/GothamBold.ttf');
-}
-@font-face {
-  font-family: Gotham-book;
-  src: url('../fonts/GothamBook.ttf');
-}
 *{
   box-sizing: border-box;
-  font-family: Gotham-book;
+  font-family: Montserrat;
 }
 
 header{
@@ -17,17 +9,25 @@ header{
 
 #account{
   color: #6d6e71;
-  font-family: Gotham;
   margin: 0;
   padding: 1.5em;
 }
 
 #language{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   padding: 0.25em 0.5em;
   color: #6d6e71;
   border-radius: 5px;
   box-shadow: 0 0 1px #6d6e71;
   margin-right: 1em;
+  background-image: url('../img/arrow-down.svg');
+  background-repeat: no-repeat;
+  padding-right: 30px;
+  background-position: 90% 50%;
+  background-size: 12px 12px;
 }
 
 #banner{
@@ -38,7 +38,6 @@ header{
 
 .heading{
   color: white;
-  font-family: Gotham;
   margin: 0;
   text-align: center;
 }
@@ -51,18 +50,22 @@ header{
 }
 
 #city{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   padding: 9px;
   color: #6d6e71;
   border-radius: 5px;
-  font-family: Gotham;
   border: 0;
   margin: 0 auto;
   background: white;
-  background-image: url('../img/location.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/location.svg'), url('../img/arrow-down.svg');
+  background-repeat: no-repeat, no-repeat;
   background-size: 12px 12px;
   padding-left: 36px;
-  background-position: 7% 50%;
+  padding-right: 36px;
+  background-position: 7% 50%, 90% 50%;
 }
 
 #searchbar{
@@ -98,14 +101,12 @@ header{
 
 .container-headings{
   color: #6d6e71;
-  font-family: Gotham;
   text-align: center;
 }
 
 #quickselect button{
   border: none;
   background: #f1f2f2;
-  font-family: Gotham;
   color: #6d6e71;
   padding: 0.75em 0.75em;
   box-shadow: 0 0 3px;

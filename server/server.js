@@ -6,10 +6,13 @@ const {mongoose} = require('./db/mongoose.js');
 const bodyparser = require('body-parser');
 const {User} = require('./models/user.js');
 const {authenticate} = require('./middleware/authenticate.js');
+const cookieParser = require('cookie-parser');
 
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT;
 let app = express();
 app.use(bodyparser.json());
+app.use(cookieParser());
 app.use(express.static(__dirname+"/../public"));
 app.get('/categories.js', (req, res)=>{
   let svalue = req.query.svalue;
@@ -35,7 +38,7 @@ app.post('/signup', (req, res)=>{
  user.save().then(() =>{
    return user.generateAuthToken();
  }).then((token)=>{
-   res.header('x-auth', token).send(user)
+   res.cookie('x-auth', token).send(user)
  }).catch((e) =>{
    res.status(400).send(e);
 });
