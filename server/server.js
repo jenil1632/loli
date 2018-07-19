@@ -1,3 +1,4 @@
+require('./config/config.js');
 const express = require('express');
 const {searchengine} = require('./searchengine.js');
 const _ = require('lodash');
