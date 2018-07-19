@@ -151,6 +151,11 @@ footer img{
   padding-top: 1.5em;
 }
 
+#social-media img:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 #separator{
   display: none;
   margin-top: 16px;

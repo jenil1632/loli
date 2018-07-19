@@ -67,7 +67,7 @@ let categories = {
       "music classes": ["indian classical", "instrument music", "vocal", "western"],
       "drama": ["acting classes"]
     },
-    "doctor": ["ayurvedic", "cardiologist", "dentist", "dermatalogist", "dietition", "ent", "eye", "general physician", "physiotheray", "psychatrist", "sexologist"],
+    "doctor": ["ayurvedic", "cardiologist", "dentist", "dermatalogist", "dietition", "ent", "eye", "general physician", "physiotherapy", "psychatrist", "sexologist"],
     "education": {
       "coaching classes/ home tution": ["school", "class 10", "class 12", "iit", "neet", "ca", "cs", "gate", "ias"],
       "arts & crafts": ["drawing classes", "painting classes", "craft and modelling classes", "photography classes", "cooking classes"],
