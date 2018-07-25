@@ -105,7 +105,7 @@ footer{
    }
 }
 @media (min-width: 1200px){
- #top-bar, #container, #footer-nav{
+ #top-bar, #container, #footer-nav, #param-bar{
    width: 1080px;
    margin: 0 auto;
  }

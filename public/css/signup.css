@@ -1,14 +1,7 @@
-@font-face {
-  font-family: Gotham;
-  src: url('../fonts/GothamBold.ttf');
-}
-@font-face {
-  font-family: Gotham-book;
-  src: url('../fonts/GothamBook.ttf');
-}
+
 *{
   box-sizing: border-box;
-  font-family: Gotham-book;
+  font-family: Montserrat;
 }
 
 header{
@@ -22,16 +15,24 @@ header{
 
 #heading{
   color: #6d6e71;
-  font-family: Gotham;
   text-align: center;
 }
 
 #language{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   padding: 0.25em 0.5em;
   color: #6d6e71;
   border-radius: 5px;
   box-shadow: 0 0 1px #6d6e71;
-  margin-right: 0.5em;
+  margin-right: 1em;
+  background-image: url('../img/arrow-down.svg');
+  background-repeat: no-repeat;
+  padding-right: 30px;
+  background-position: 90% 50%;
+  background-size: 12px 12px;
 }
 
 #container{
@@ -42,7 +43,6 @@ header{
 .sub-headings{
   text-align: center;
   color: #414042;
-  font-family: Gotham;
 }
 
 .twobuttons button{
@@ -55,6 +55,17 @@ header{
 form{
   width: 95%;
   margin: 0 auto;
+}
+
+.redborder{
+  border: 1px red solid;
+}
+
+.tips{
+  font-size: 12px;
+  color: red;
+  display: block;
+  text-align: center;
 }
 
 input{
@@ -100,7 +111,7 @@ button[type="submit"]{
   font-size: 16px;
   display: block;
   margin: 1em auto 2em;
-  font-family: Gotham;
+  font-weight: 700;
 }
 
 p a{
@@ -124,7 +135,7 @@ form p a{
   font-size: 16px;
   display: block;
   margin: 1em auto 2em;
-  font-family: Gotham;
+  font-weight: 700;
 }
 
 .vendorsignuplogin{
@@ -138,7 +149,7 @@ form p a{
   display: block;
   margin-left: 0.25em;
   margin-right: 0.25em;
-  font-family: Gotham;
+  font-weight: 700;
 }
 
 #links{
@@ -161,6 +172,13 @@ footer img{
 
 #social-media{
   padding-top: 1.5em;
+}
+
+#social-media img:hover{
+  opacity: 0.5;
+  cursor: pointer;
+  transition-duration: 1s;
+  transition-property: opacity;
 }
 
 #separator{

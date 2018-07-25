@@ -1,0 +1,97 @@
+#banner{
+  background-image: url('../img/banner.jpg');
+  background-position: center;
+  overflow: visible;
+}
+
+.heading{
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+#loli-logo{
+  display: block;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#city{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  padding: 9px;
+  color: #6d6e71;
+  border-radius: 5px;
+  border: 0;
+  margin: 0 auto;
+  background: white;
+  background-image: url('../img/location.svg'), url('../img/arrow-down.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 12px 12px;
+  padding-left: 36px;
+  padding-right: 36px;
+  background-position: 7% 50%, 90% 50%;
+  font-weight: 700;
+}
+
+#searchbar{
+  padding: 0.65em 0.75em;
+  width: 75%;
+  color: #6d6e71;
+  border-radius: 5px;
+  border: none;
+  margin: 1em auto 0.5em;
+  display: block;
+}
+
+#main-search{
+  position: relative;
+}
+
+#tip{
+  color: white; margin: 0; text-align: center;
+  }
+
+#search{
+  color: white;
+  background: #d63322;
+  border: none;
+  cursor: pointer;
+  padding: 1em 2em;
+  border-radius: 5px;
+  box-shadow: 0 8px 6px -4px #a8190e;
+  font-size: 16px;
+  display: block;
+  margin: 1em auto 2em;
+}
+
+.container-headings{
+  color: #6d6e71;
+  text-align: center;
+}
+
+#quickselect button{
+  border: none;
+  background: #f1f2f2;
+  color: #6d6e71;
+  padding: 0.75em 0.75em;
+  box-shadow: 0 0 3px;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.category{
+  width: 30%;
+}
+.category img{
+  max-width: 100%;
+}
+.category h4{
+  text-align: center;
+  font-weight: 400;
+}

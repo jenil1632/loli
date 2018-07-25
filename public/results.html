@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Search Results | Loli - The Local Listing App</title>
+  <meta name = "description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/loli-logo.png" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div id = "top-bar">
+      <img src = "img/loli-logo.svg" alt = "Loli logo" height="40" width="40" id = "loli-logo"/>
+    <h4 id ="heading">The Local Listing App</h4>
+    <select id ="language">
+      <option value="English" selected>English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    </div>
+  </header>
+  <div style="background-color: #6d6e71">
+  <div id = "param-bar">
+    <div class = "sub-param">
+    <select id = "city">
+      <option value="mumbai">Mumbai</option>
+      <option value="pune">Pune</option>
+    </select>
+    <select id = "category">
+      <option value="food">Food</option>
+      <option value="on demand services">on demand services</option>
+    </select>
+  </div>
+    <input value="Desserts" id ="searchbarres"/>
+  </div>
+</div>
+  <div id = "container">
+    <div id = "filter-bar">
+      <div class = "sub-filter">
+      <h5 class = "filter-headings">Show results in</h5>
+      <div style="display: flex">
+    <button class = "selected" style="margin-left: auto">Products</button>
+    <button style="margin-right: auto">Services</button>
+  </div>
+  </div>
+  <div class = "sub-filter"  id = "view">
+    <h5 class="filter-headings">View as</h5>
+    <div style="display: flex">
+    <button style="margin-left: auto" class="selected" id = "grid-toggle">Grid</button>
+    <button id = "list-toggle">List</button>
+    <button style="margin-right: auto">Map</button>
+  </div>
+</div>
+<div class = "sub-filter">
+    <h5 class="filter-headings">Sort by</h5>
+    <div >
+    <select id = "sort">
+      <option value = "Around me">Around me</option>
+    </select>
+  </div>
+  </div>
+  </div>
+  <div id ="results">
+    <div class = "result grid-view">
+      <div class = "image-container">
+      <img src = "img/test1.jpg" class = "main-photo"/>
+    </div>
+    <div class ="info">
+      <h4>Desserts by Raveena</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
+      <div class = "distance">
+        2.0 kms
+        <img src="img/location-distance.svg"/>
+        Wadala, Mumbai
+      </div>
+    </div>
+    <img src = "img/badge-premium.svg" class = "badge"/>
+    <img src = "img/badge-ad.svg" class = "ad"/>
+      <div class = "side-info">
+        <div class = "badge-container">
+          <img src = "img/badge-premium.svg" class = "dummy"/>
+        <span class = "badgename">Premium</span>
+      </div>
+        <img src = "img/button-call.svg" class="call"/>
+        <img src = "img/button-message.svg" class="text"/>
+        <div class = "rating-container">
+        <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
+      </div>
+      </div>
+      </div>
+
+      <div class = "result grid-view">
+        <div class = "image-container">
+        <img src = "img/test2.jpg" class = "main-photo"/>
+      </div>
+      <div class ="info">
+        <h4>Desserts by Raveena</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
+        <div class = "distance">
+          2.0 kms
+          <img src="img/location-distance.svg"/>
+          Wadala, Mumbai
+        </div>
+      </div>
+      <img src = "img/badge-premium.svg" class = "badge"/>
+        <div class = "side-info">
+          <div class = "badge-container">
+            <img src = "img/badge-premium.svg" class = "dummy"/>
+          <span class = "badgename">Premium</span>
+        </div>
+          <img src = "img/button-call.svg" class="call"/>
+          <img src = "img/button-message.svg" class="text"/>
+          <div class = "rating-container">
+          <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
+        </div>
+        </div>
+        </div>
+
+        <div class = "result grid-view">
+          <div class = "image-container">
+          <img src = "img/test3.jpg" class = "main-photo"/>
+        </div>
+        <div class ="info">
+          <h4>Desserts by Raveena</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
+          <div class = "distance">
+            2.0 kms
+            <img src="img/location-distance.svg"/>
+            Wadala, Mumbai
+          </div>
+        </div>
+        <img src = "img/badge-verified.svg" class = "badge"/>
+          <div class = "side-info">
+            <div class = "badge-container">
+              <img src = "img/badge-verified.svg" class = "dummy"/>
+            <span class = "badgename">Verified</span>
+          </div>
+            <img src = "img/button-call.svg" class="call"/>
+            <img src = "img/button-message.svg" class="text"/>
+            <div class = "rating-container">
+            <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
+          </div>
+          </div>
+          </div>
+
+          <div class = "result grid-view">
+            <div class = "image-container">
+            <img src = "img/test4.jpg" class = "main-photo"/>
+          </div>
+          <div class ="info">
+            <h4>Desserts by Raveena</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
+            <div class = "distance">
+              2.0 kms
+              <img src="img/location-distance.svg"/>
+              Wadala, Mumbai
+            </div>
+          </div>
+          <img src = "img/badge-verified.svg" class = "badge"/>
+            <div class = "side-info">
+              <div class = "badge-container">
+                <img src = "img/badge-verified.svg" class = "dummy"/>
+              <span class = "badgename">Verified</span>
+            </div>
+              <img src = "img/button-call.svg" class="call"/>
+              <img src = "img/button-message.svg" class="text"/>
+              <div class = "rating-container">
+              <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
+            </div>
+            </div>
+            </div>
+
+            <div class = "result grid-view">
+              <div class = "image-container">
+              <img src = "img/test5.jpg" class = "main-photo"/>
+            </div>
+            <div class ="info">
+              <h4>Desserts by Raveena</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
+              <div class = "distance">
+                2.0 kms
+                <img src="img/location-distance.svg"/>
+                Wadala, Mumbai
+              </div>
+            </div>
+              <div class = "side-info">
+                <div class = "badge-container">
+                  <div class = "dummy"></div>
+              </div>
+                <img src = "img/button-call.svg" class="call"/>
+                <img src = "img/button-message.svg" class="text"/>
+                <div class = "rating-container">
+                <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
+              </div>
+              </div>
+              </div>
+
+              <div class = "result grid-view">
+                <div class = "image-container">
+                <img src = "img/test6.jpg" class = "main-photo"/>
+              </div>
+              <div class ="info">
+                <h4>Desserts by Raveena</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
+                <div class = "distance">
+                  2.0 kms
+                  <img src="img/location-distance.svg"/>
+                  Wadala, Mumbai
+                </div>
+              </div>
+                <div class = "side-info">
+                  <div class = "badge-container">
+                    <div class = "dummy"></div>
+                </div>
+                  <img src = "img/button-call.svg" class="call"/>
+                  <img src = "img/button-message.svg" class="text"/>
+                  <div class = "rating-container">
+                  <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
+                </div>
+                </div>
+                </div>
+  </div>
+  <div id = "pagination">
+    <img src = "img/arrow-down.svg" id = "pageback"/>
+    <div class = "pagenumber selected">1</div>
+    <div class = "pagenumber">2</div>
+    <div class = "pagenumber">3</div>
+    <div class = "pagenumber">4</div>
+    <div class = "dots">...</div>
+    <div class = "pagenumber">10</div>
+    <img src = "img/arrow-down.svg" id = "pagenext"/>
+  </div>
+
+</div>
+<footer>
+  <div id = "footer-nav">
+  <div id = "links">
+    <div id = "left-container">
+    <a href="">About Us</a>
+    <a href="">Feedback</a>
+    <a href="">Contact</a>
+  </div>
+    <div id = "right-container">
+    <a href="">Register as Seller</a>
+    <a href="">Advertise with Loli</a>
+    <a href="">Blogs</a>
+  </div>
+  </div>
+  <div id = "social-media">
+    <img src ="img/social-fb.svg" alt="facebook"/>
+    <img src ="img/social-instagram.svg" alt="instagram"/>
+    <img src ="img/social-youtube.svg" alt="youtube"/>
+    <img src ="img/social-twitter.svg" alt="twitter"/>
+  </div>
+</div>
+  <hr id = "separator">
+  <div style = "background: #e6e7e8; overflow: auto">
+  <p id ="disclaimer">By continuing past this page, you agree to our Terms of Service, Cookie policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners.<br>
+  &copy; 2018 The Local Listing App. All rights reserved.</p>
+</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/results.js"></script>
+</body>
+</html>

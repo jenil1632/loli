@@ -11,7 +11,13 @@ let UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 1,
-    unique: true
+    unique: true,
+    validate: {
+      validator: function(v) {
+        return /^[a-zA-Z0-9!@#\$%\^\&\)\(+._-]+$/g.test(v);
+      },
+      message: '{VALUE} is not a valid userv!'
+    }
   },
   password: {
     type: String,

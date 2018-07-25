@@ -38,9 +38,9 @@ app.post('/signup', (req, res)=>{
  user.save().then(() =>{
    return user.generateAuthToken();
  }).then((token)=>{
-   res.cookie('x-auth', token).send(user)
+   res.cookie('x-auth', token).send(user);
  }).catch((e) =>{
-   res.status(400).send(e);
+   res.status(400).send(e.message);
 });
 });
 
@@ -48,15 +48,16 @@ app.post('/login', (req, res)=>{
   let body = _.pick(req.body, ["username", "password"]);
   User.findByCredentials(body.username, body.password).then((user)=>{
     return user.generateAuthToken().then((token)=>{
-      res.header('x-auth', token).send(user);
+      res.cookie('x-auth', token).send(user);
     });
   }).catch((e)=>{
-    res.status(400).send();
+    res.status(400).send(e);
   });
 });
 
 app.delete('/login', authenticate, (req, res)=>{
   req.user.removeToken(req.token).then(()=>{
+    res.clearCookie('x-auth');
     res.status(200).send();
   }, ()=>{
     res.status(400).send();
