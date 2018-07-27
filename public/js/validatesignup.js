@@ -3,7 +3,7 @@
 let emailid = $('#emailid').val();
 
 function validateForm(){
-  if(validatePassword() && validatePasswords() && validateUsername() && $('#termsandconditions').checked)
+  if(validatePassword() && validatePasswords() && validateUsername())
   return true;
   else
   {

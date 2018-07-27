@@ -3,7 +3,7 @@ const validator = require('validator');
 const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 const bcrypt = require('bcryptjs');
-
+const nodemailer = require('nodemailer');
 
 let UserSchema = new mongoose.Schema({
   username: {
@@ -11,6 +11,7 @@ let UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 1,
+    maxlength: 20,
     unique: true,
     validate: {
       validator: function(v) {
@@ -35,6 +36,10 @@ let UserSchema = new mongoose.Schema({
       validator: validator.isEmail,
       message: '{VALUE} is not a valid email'
     }
+  },
+  active: {
+    type: Boolean,
+    required: true
   },
   tokens: [{
     access: {
@@ -90,11 +95,38 @@ UserSchema.methods.removeToken = function(token){
   });
 };
 
+UserSchema.methods.emailverify = function(url){
+  let user = this;
+  let transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      user: "thelocallistingapp@gmail.com",
+      pass: process.env.EMAIL_PASSWORD
+    }
+  });
+  let mailurl = url + '?_id=' + user._id.toString();
+  let mailOptions = {
+  from: 'thelocallistingapp@gmail.com',
+  to: user.emailid,
+  subject: 'Loli Account verification',
+  html: '<h1>The Local Listing App</h1><h2>Dear '+user.username+' ,</h2><p>Verify your account by clicking on this link below:</p><p><a href = '+mailurl+'>Verification Link</a></p><h4>Note: This link deactivates after 3 days.</h4><h5>This is a system generated e-mail, please do not reply to it.</h5>'
+};
+return new Promise(function(resolve, reject){
+  transporter.sendMail(mailOptions, function (err, info) {
+     if(err)
+       reject();
+     else
+       resolve(user);
+  });
+});
+
+};
+
 UserSchema.statics.findByToken = function(token){
   let User = this;
   let decoded;
   try{
-    decoded = jwt.verify(token, process.env.JWT_SECRET);console.log(decoded);
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
   }
   catch(e){
    return Promise.reject();

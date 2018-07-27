@@ -33,14 +33,21 @@ app.post('/signup', (req, res)=>{
  let user = new User({
    username: req.body.username,
    password: req.body.password,
-   emailid: req.body.emailid
+   emailid: req.body.emailid,
+   active: false
  });
  user.save().then(() =>{
    return user.generateAuthToken();
- }).then((token)=>{
+ })
+ .then((token)=>{
    res.cookie('x-auth', token).send(user);
- }).catch((e) =>{
-   res.status(400).send(e.message);
+ }).then(()=>{
+   var fullUrl = req.protocol + '://' + req.get('host') + '/verify';
+   return user.emailverify(fullUrl);
+   res.redirect('/emailnotice');
+ })
+ .catch((e) =>{
+   res.status(400).send(e);
 });
 });
 
@@ -61,6 +68,15 @@ app.delete('/login', authenticate, (req, res)=>{
     res.status(200).send();
   }, ()=>{
     res.status(400).send();
+  });
+});
+
+app.get('/verify', (req, res)=>{
+  User.findById(req.query._id, { $set: {active: true}}, (err, user)=>{
+    if(err)
+    res.status(400).send();
+    else
+    res.status(200).send();
   });
 });
 app.listen(port);
