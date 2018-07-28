@@ -81,7 +81,7 @@ margin-right: 0.5em;
 }
 
 button{
-    border: 1px black solid;
+    border: 1px #6d6e71 solid;
     cursor: pointer;
     padding: 0.5em 1em;
     border-radius: 10px;
@@ -101,7 +101,7 @@ button{
 #sort{
   display: block;
   margin: 0 auto;
-  border:1px black solid;
+  border:1px #6d6e71 solid;
   border-radius: 10px;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -118,7 +118,7 @@ button{
 position: relative;
 margin-bottom: 12px;
 background-color: #f1f1f2;
-border-radius: 10px;
+border-radius: 15px;
 padding-bottom: 12px;
 margin-left: 8px;
 margin-right: 8px;
@@ -132,10 +132,19 @@ flex-direction: column;
 }
 
 .main-photo{
-  max-width: 100%;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 10px;
 }
 
+.grid-photo{
+  height: 250px;
+  object-fit: cover;
+}
+
+.list-photo{
+  max-height: 180px;
+  object-fit: cover;
+}
 
 .distance img{
   width: 20px;
@@ -188,6 +197,7 @@ flex-direction: column;
   text-align: center;
   font-weight: 700;
   font-size: 16px;
+  color: #414042;
 }
 
 .rating-value{
@@ -205,6 +215,7 @@ flex-direction: column;
 .product-heading{
   font-weight: 700;
   font-size: 14px;
+  color: #414042;
 }
 
 .side-info{
@@ -217,9 +228,16 @@ flex-direction: column;
 
 .result:hover{
   background-color: white;
-  border: 1px black solid;
+  border: 1px #6d6e71 solid;
   box-shadow: 0 0 10px #6d6e71;
+  transition: background-color 0.5s, border 0.5s, box-shadow 0.5s;
+  transition-timing-function: ease-in-out;
 }
+
+.red{
+  display: none;
+}
+
 
 .info{
   margin-left: 12px;
@@ -229,6 +247,7 @@ flex-direction: column;
 .info h4{
   margin-top: 0px;
   margin-bottom: 8px;
+  color: #414042;
 }
 
 .info p{
@@ -242,6 +261,7 @@ flex-direction: column;
 .distance{
   font-size: 14px;
   font-weight: 700;
+  color: #414042;
 }
 
 .dummy{
@@ -278,12 +298,14 @@ button:focus {outline:0;}
 }
 
 .pagenumber{
-  padding: 0.5em 0.65em;
-  border: 1px black solid;
+  padding: 0.5em 0.5em;
+  border: 1px #6d6e71 solid;
   border-radius: 5px;
   margin-left: 0.25em;
   margin-right: 0.25em;
   cursor: pointer;
+  width: 35px;
+  text-align: center;
 }
 
 .dots{
@@ -331,6 +353,10 @@ button:focus {outline:0;}
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+
+  #heading{
+    font-size: 1.2em;
   }
 }
 

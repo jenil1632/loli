@@ -84,6 +84,10 @@ footer p{
   padding: 0.25em;
 }
 
+#links a:hover{
+  font-weight: 700;
+}
+
 #footer-nav{
   padding-bottom: 0.5em;
 }

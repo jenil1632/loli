@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/results.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -38,7 +38,7 @@
   </div>
   <div id = "searchbar-container">
     <input value="Desserts" id ="searchbarres"/>
-    <img src = "img/search-icon-2.svg" alt="search" id ="search-icon"/>
+    <img src = "img/search-icon.svg" alt="search" id ="search-icon"/>
   </div>
   </div>
 </div>
@@ -63,7 +63,9 @@
     <h5 class="filter-headings">Sort by</h5>
     <div >
     <select id = "sort">
-      <option value = "Around me">Around me</option>
+      <option value = "around_me">Around me</option>
+      <option value = "rating">Rating</option>
+      <option value = "location">Location</option>
     </select>
   </div>
   </div>
@@ -71,7 +73,7 @@
   <div id ="results">
     <div class = "result grid-view">
       <div class = "image-container">
-      <img src = "img/test1.jpg" class = "main-photo"/>
+      <img src = "img/test1.jpg" class = "main-photo grid-photo"/>
     </div>
     <div class ="info">
       <h4>Desserts by Raveena</h4>
@@ -90,8 +92,10 @@
           <img src = "img/badge-premium.svg" class = "dummy"/>
         <span class = "badgename">Premium</span>
       </div>
-        <img src = "img/button-call.svg" class="call"/>
-        <img src = "img/button-message.svg" class="text"/>
+        <img src = "img/button-call.svg" class="call red"/>
+        <img src = "img/button-call-white.svg" class="call white"/>
+        <img src = "img/button-text-white.svg" class="text white"/>
+        <img src = "img/button-message.svg" class="text red"/>
         <div class = "rating-container">
         <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
       </div>
@@ -100,7 +104,7 @@
 
       <div class = "result grid-view">
         <div class = "image-container">
-        <img src = "img/test2.jpg" class = "main-photo"/>
+        <img src = "img/test2.jpg" class = "main-photo grid-photo"/>
       </div>
       <div class ="info">
         <h4>Desserts by Raveena</h4>
@@ -118,8 +122,10 @@
             <img src = "img/badge-premium.svg" class = "dummy"/>
           <span class = "badgename">Premium</span>
         </div>
-          <img src = "img/button-call.svg" class="call"/>
-          <img src = "img/button-message.svg" class="text"/>
+        <img src = "img/button-call.svg" class="call red"/>
+        <img src = "img/button-call-white.svg" class="call white"/>
+        <img src = "img/button-text-white.svg" class="text white"/>
+        <img src = "img/button-message.svg" class="text red"/>
           <div class = "rating-container">
           <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
         </div>
@@ -128,7 +134,7 @@
 
         <div class = "result grid-view">
           <div class = "image-container">
-          <img src = "img/test3.jpg" class = "main-photo"/>
+          <img src = "img/test3.jpg" class = "main-photo grid-photo"/>
         </div>
         <div class ="info">
           <h4>Desserts by Raveena</h4>
@@ -146,8 +152,10 @@
               <img src = "img/badge-verified.svg" class = "dummy"/>
             <span class = "badgename">Verified</span>
           </div>
-            <img src = "img/button-call.svg" class="call"/>
-            <img src = "img/button-message.svg" class="text"/>
+          <img src = "img/button-call.svg" class="call red"/>
+          <img src = "img/button-call-white.svg" class="call white"/>
+          <img src = "img/button-text-white.svg" class="text white"/>
+          <img src = "img/button-message.svg" class="text red"/>
             <div class = "rating-container">
             <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
           </div>
@@ -156,11 +164,11 @@
 
           <div class = "result grid-view">
             <div class = "image-container">
-            <img src = "img/test4.jpg" class = "main-photo"/>
+            <img src = "img/test4.jpg" class = "main-photo grid-photo"/>
           </div>
           <div class ="info">
             <h4>Desserts by Raveena</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <p style = "font-weight:300">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
             <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
             <div class = "distance">
               2.0 kms
@@ -174,8 +182,10 @@
                 <img src = "img/badge-verified.svg" class = "dummy"/>
               <span class = "badgename">Verified</span>
             </div>
-              <img src = "img/button-call.svg" class="call"/>
-              <img src = "img/button-message.svg" class="text"/>
+            <img src = "img/button-call.svg" class="call red"/>
+            <img src = "img/button-call-white.svg" class="call white"/>
+            <img src = "img/button-text-white.svg" class="text white"/>
+            <img src = "img/button-message.svg" class="text red"/>
               <div class = "rating-container">
               <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
             </div>
@@ -184,11 +194,11 @@
 
             <div class = "result grid-view">
               <div class = "image-container">
-              <img src = "img/test5.jpg" class = "main-photo"/>
+              <img src = "img/test5.jpg" class = "main-photo grid-photo"/>
             </div>
             <div class ="info">
               <h4>Desserts by Raveena</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              <p style = "font-weight:300">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
               <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
               <div class = "distance">
                 2.0 kms
@@ -200,8 +210,10 @@
                 <div class = "badge-container">
                   <div class = "dummy"></div>
               </div>
-                <img src = "img/button-call.svg" class="call"/>
-                <img src = "img/button-message.svg" class="text"/>
+              <img src = "img/button-call.svg" class="call red"/>
+              <img src = "img/button-call-white.svg" class="call white"/>
+              <img src = "img/button-text-white.svg" class="text white"/>
+              <img src = "img/button-message.svg" class="text red"/>
                 <div class = "rating-container">
                 <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
               </div>
@@ -210,11 +222,11 @@
 
               <div class = "result grid-view">
                 <div class = "image-container">
-                <img src = "img/test6.jpg" class = "main-photo"/>
+                <img src = "img/test6.jpg" class = "main-photo grid-photo"/>
               </div>
               <div class ="info">
                 <h4>Desserts by Raveena</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                <p style = "font-weight:300">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 <p class = "extra"><span class = "product-heading">Products: </span>Choclates, cakes, pastries, cup-cakes</p>
                 <div class = "distance">
                   2.0 kms
@@ -226,8 +238,10 @@
                   <div class = "badge-container">
                     <div class = "dummy"></div>
                 </div>
-                  <img src = "img/button-call.svg" class="call"/>
-                  <img src = "img/button-message.svg" class="text"/>
+                <img src = "img/button-call.svg" class="call red"/>
+                <img src = "img/button-call-white.svg" class="call white"/>
+                <img src = "img/button-text-white.svg" class="text white"/>
+                <img src = "img/button-message.svg" class="text red"/>
                   <div class = "rating-container">
                   <span class = "rating">Rating: </span><span class = "rating-value">4.8</span>
                 </div>

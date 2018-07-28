@@ -22,6 +22,8 @@ function toList()
   $('#results').children().addClass('list-view');
   $('#results').children().removeClass('grid-view');
   $('.image-container').addClass('list-image-container');
+  $('.main-photo').removeClass('grid-photo');
+  $('.main-photo').addClass('list-photo');
   $('.side-info').addClass('list-side-info');
   $('.info').addClass('list-info');
   $('.badgename').show();
@@ -60,6 +62,8 @@ function toGrid()
   $('#results').children().addClass('grid-view');
   $('#results').children().removeClass('list-view');
   $('.image-container').removeClass('list-image-container');
+  $('.main-photo').addClass('grid-photo');
+  $('.main-photo').removeClass('list-photo');
   $('.side-info').removeClass('list-side-info');
   $('.info').removeClass('list-info');
   $('.badgename').hide();
@@ -72,3 +76,11 @@ function toGrid()
   $('.rating-container').css('margin', '0 0 0 auto');
   $('.dummy').hide();
 }
+
+$('.result').hover(function(){
+  $(this).find('.white').toggle();
+  $(this).find('.red').fadeToggle();
+}, function(){
+  $(this).find('.red').toggle();
+  $(this).find('.white').fadeToggle();
+});
