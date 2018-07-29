@@ -7,13 +7,24 @@ const bodyparser = require('body-parser');
 const {User} = require('./models/user.js');
 const {authenticate} = require('./middleware/authenticate.js');
 const cookieParser = require('cookie-parser');
+const path = require('path');
+const publicPath = path.join(__dirname, '../public');
+const socketIO = require('socket.io');
+const http = require('http');
+const {generateMessage} = require('./utils/message.js')
+
 
 
 const port = process.env.PORT;
 let app = express();
 app.use(bodyparser.json());
 app.use(cookieParser());
-app.use(express.static(__dirname+"/../public"));
+app.use(express.static(publicPath));
+let server = http.createServer(app);
+let io = socketIO(server);
+
+
+
 app.get('/categories.js', (req, res)=>{
   let svalue = req.query.svalue;
   svalue = svalue.toLowerCase();
@@ -29,6 +40,9 @@ app.get('/categories.js', (req, res)=>{
   }
   res.send(_.uniqBy(searchresults, 'value'));
 });
+
+
+
 app.post('/signup', (req, res)=>{
  let user = new User({
    username: req.body.username,
@@ -51,6 +65,9 @@ app.post('/signup', (req, res)=>{
 });
 });
 
+
+
+
 app.post('/login', (req, res)=>{
   let body = _.pick(req.body, ["username", "password"]);
   User.findByCredentials(body.username, body.password).then((user)=>{
@@ -62,6 +79,9 @@ app.post('/login', (req, res)=>{
   });
 });
 
+
+
+
 app.delete('/login', authenticate, (req, res)=>{
   req.user.removeToken(req.token).then(()=>{
     res.clearCookie('x-auth');
@@ -71,6 +91,9 @@ app.delete('/login', authenticate, (req, res)=>{
   });
 });
 
+
+
+
 app.get('/verify', (req, res)=>{
   User.findById(req.query._id, { $set: {active: true}}, (err, user)=>{
     if(err)
@@ -79,4 +102,21 @@ app.get('/verify', (req, res)=>{
     res.status(200).send();
   });
 });
-app.listen(port);
+
+
+io.on('connection', (socket)=>{
+  console.log('new user Connected');
+  socket.on('disconnect', ()=>{
+    console.log('user was disconneced');
+  });
+  socket.emit('newMessage', generateMessage('admin', 'message'));
+  socket.on('createMessage', (message, callback)=>{
+    console.log(message);
+    callback('This is from the server');
+  });
+});
+
+
+server.listen(port, ()=>{
+  console.log('Connected');
+});
