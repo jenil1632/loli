@@ -1,0 +1,553 @@
+header{
+  background-color: #d63322;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#loli-logo{
+  height: 40px;
+  width: 40px;
+}
+
+#search-icon-mobile{
+  margin-left: auto;
+}
+
+#account-link{
+  display: none;
+  text-decoration: none;
+  color: white;
+}
+
+#nav-search{
+  display: none;
+}
+
+#language{
+  margin-left: 0.5em;
+}
+
+#sub-search-bar{
+  display: none;
+}
+
+.image-container{
+  max-width: 350px;
+}
+
+.product-heading{
+  margin: 0;
+}
+
+#product-list{
+  font-size: 14px;
+}
+
+.rating{
+  font-size: 14px;
+  margin-top: 0.5em;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.whatsapp{
+  border-radius: 5px;
+  background-color: white;
+  width: 60px;
+  height: 37px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-right: 0.5em;
+}
+
+.call-numbers{
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-numbers{
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.numbers{
+  font-size: 15px;
+  font-weight: 700;
+  color: #414012;
+}
+
+.button-seller{
+  width: 94%;
+  background-color: #d63322;
+  color: white;
+  border: none;
+  margin-bottom: 0.5em;
+}
+
+.seller-details{
+  background-color: #f1f1f2;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 15px;
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+#main-content{
+  flex-grow: 1;
+}
+
+#section-headers{
+  display: none;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.section-heading{
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  color: #414042;
+  font-weight: 700;
+  text-align: center;
+}
+
+#button-message{
+  display: block;
+  margin: 0 auto 0.5em;
+}
+
+#message-box{
+  display: none;
+  margin-left: 16px;
+  max-width: 30%;
+}
+
+#message-header{
+  color: white;
+  background-color: #d63322;
+}
+
+.input-bar{
+  display: flex;
+  align-items: center;
+}
+
+#send{
+  background-color: #d63322;
+  border: none;
+  border-radius: 5px;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.input-box{
+  height: 60px;
+  border: none;
+  resize: none;
+}
+
+.red-heading{
+  color: #d63322;
+  margin-left: 16px;
+  margin-bottom: 4px;
+}
+
+hr{
+  width: 88%;
+  margin-top: 0;
+}
+
+.overview-box{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.overview-box h5{
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.overview-box p{
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+.overview-box img{
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+#photos{
+padding-left: 16px;
+padding-right: 16px;
+}
+
+.seller-photos{
+  width: 32%;
+  height: 80px;
+  object-fit: cover;
+}
+
+.user-review{
+  background-color: white;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 10px;
+  padding-top: 16px;
+}
+
+.user-review h4{
+  margin-top: 0;
+  margin-left: 16px;
+}
+
+.review-header{
+  display: flex;
+}
+
+#reviews p{
+  margin-top: 0;
+  padding-left: 16px;
+  padding-right: 8px;
+  padding-bottom: 12px;
+  color: #414042;
+}
+
+.rating-value{
+  margin-right: 16px;
+  margin-left: 8px;
+}
+
+.myRating{
+  margin-left: auto;
+  color: #414042;
+}
+
+#review-button{
+  margin-left: 16px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.review-button-arrow{
+  transform: rotate(270deg);
+  margin-left: 25px;
+}
+
+#overview-heading:hover, #photo-heading:hover, #review-heading:hover{
+  cursor: pointer;
+}
+
+#reportSeller{
+  text-decoration: none;
+  color: #414042;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+#report-icon{
+  margin-left: 16px;
+  margin-right: 4px;
+}
+
+#overlay-review, #overlay-report{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#reviewBox, #reportBox{
+  background-color: #f1f1f2;
+  width: 70%;
+  max-width: 400px;
+  margin: 100px auto 0;
+  border-radius: 15px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.modal-heading{
+  text-align: center;
+  padding-top: 16px;
+}
+
+.star{
+  height: 22px;
+  width: 22px;
+  padding-right: 5px;
+}
+
+.modal-content{
+  display: block;
+  margin: 16px auto;
+  width: 85%;
+  border-radius: 10px;
+  height: 150px;
+  resize: none;
+  padding: 8px;
+}
+
+.close{
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+#myRatingvalue{
+  color: #d63322;
+  font-weight: 700;
+  padding-left: 8px;
+  font-size: 18px;
+  display: inline-block;
+}
+
+#modalsubmit{
+  border: none;
+  color: white;
+  margin: 16px auto;
+  display: block;
+  background-color: #d63322;
+}
+
+.reportValue{
+  padding-left: 16px;
+}
+
+input[type="radio"]{
+  margin-bottom: 16px;
+}
+
+.result:hover{
+  background-color: #f1f1f2;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+/* media queries */
+
+@media(max-width: 450px)
+{
+  #heading{
+    display: none;
+  }
+}
+
+@media(min-width: 600px)
+{
+  .result{
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+
+  .whatsapp-numbers{
+    padding-bottom: 12px;
+  }
+
+  .image-container{
+    max-width: 300px;
+  }
+
+  .grid-photo{
+    height: auto;
+    max-height: 250px;
+  }
+
+  .info{
+    padding-top: 20px;
+  }
+
+  .badge-container{
+    margin-left: auto;
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-right: 16px;
+  }
+
+  .dummy{
+    display: block;
+  }
+
+  .badge{
+    display: none;
+  }
+
+  .badgename{
+    display: block;
+  }
+
+  #button-message{
+    display: none;
+  }
+
+  #section-headers{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #message-box{
+    display: block;
+    margin-top: 16px;
+    margin-right: 16px;
+  }
+
+  .seller-details{
+    display: flex;
+    padding-bottom: 16px;
+  }
+
+  hr{
+    display: none;
+  }
+
+  .red-heading{
+    display: none;
+  }
+
+  .selected{
+    color: white;
+    background-color: #d63322;
+  }
+
+  .business-area{
+    display: flex;
+    padding-top: 8px;
+  }
+
+  #ba{
+    max-width: 50%;
+  }
+
+  #conversation{
+    margin-top: 16px;
+    background-color: white;
+    padding-top: 300px;
+    margin-bottom: 16px;
+  }
+
+  .button-seller{
+    display: none;
+  }
+
+  #photo-container, #reviews{
+    display: none;
+    padding-top: 20px;
+  }
+
+  #photos{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 24px;
+  }
+
+  .seller-photos{
+    width: 100px;
+    height: 100px;
+    margin: 4px;
+  }
+
+  .overview-box{
+    padding-left: 24px;
+  }
+
+  .user-review, #review-button{
+    margin-left: 24px;
+  }
+}
+
+@media(min-width: 700px)
+{
+  #search-icon-mobile{
+    display: none;
+  }
+
+  #account-icon{
+    display: none;
+  }
+
+  #account-link{
+    display: inline;
+    margin-left: 16px;
+  }
+
+  #nav-search{
+    display: flex;
+    flex-grow: 1;
+  }
+
+  #loli-logo{
+    width: 45px;
+    height: 45px;
+  }
+
+  #searchbarres{
+    padding: 10px 12px;
+  }
+
+   #search-icon{
+     height: 38px;
+   }
+
+   select{
+     padding: 10px;
+   }
+
+   #overview-heading, #photo-heading, #review-heading{
+     width: 30%;
+   }
+
+}
+
+@media(min-width: 1000px)
+{
+  .info h4{
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .product-heading{
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  #product-list{
+    font-size: 16px;
+  }
+
+  .rating{
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .rating-value{
+    font-size: 20px;
+  }
+
+  .numbers{
+    font-size: 16px;
+  }
+
+  .overview-box h5{
+    font-size: 16px;
+  }
+
+  .overview-box p{
+    font-size: 16px;
+  }
+
+  #account-link{
+    margin-left: 48px;
+    margin-right: 12px;
+  }
+}
