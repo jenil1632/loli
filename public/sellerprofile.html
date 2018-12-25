@@ -134,10 +134,14 @@
   </div>
   <div id = "message-box">
     <div id = "message-header" class = "section-heading">Message Box</div>
-    <div id = "conversation"></div>
+    <div id = "conversation">
+    <ul id = "message-list"></ul>
+    </div>
     <div class = "input-bar">
+      <form style="display:flex; align-items: center; width: 100%">
     <textarea class = "input-box" placeholder="Type your message here" style="padding: 4px"></textarea>
-    <button id = "send"><img src="img/arrow-right.svg" height="12px" width="12px"/></button>
+    <button id = "send" type="submit"><img src="img/arrow-right.svg" height="12px" width="12px"/></button>
+  </form>
   </div>
   </div>
         </div>
@@ -176,7 +180,23 @@
   &copy; 2018 The Local Listing App. All rights reserved.</p>
 </div>
 </footer>
+<script id ="message-template" type="text/template">
+<li class = "text-message">
+<span style="display: block; font-weight:700; font-size: 14px; word-break: break-word">{{text}}</span>
+<span style="display: block; font-size: 10px; text-align: right; padding-top: 4px">{{createdAt}}</span>
+</li>
+</script>
+<script id ="message-template-1" type="text/template">
+<li class = "text-message message-self">
+<span style="display: block; font-weight:700; font-size: 14px; word-break: break-word">{{text}}</span>
+<span style="display: block; font-size: 10px; text-align: right; padding-top: 4px">{{createdAt}}</span>
+</li>
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/seller-profile.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/libs/moment.js"></script>
+<script src="js/libs/mustache.js"></script>
+<script type="text/javascript" src="js/chat.js"></script>
 </body>
 </html>

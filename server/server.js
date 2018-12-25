@@ -107,11 +107,10 @@ app.get('/verify', (req, res)=>{
 io.on('connection', (socket)=>{
   console.log('new user Connected');
   socket.on('disconnect', ()=>{
-    console.log('user was disconneced');
+    console.log('user was disconnected');
   });
-  socket.emit('newMessage', generateMessage('admin', 'message'));
   socket.on('createMessage', (message, callback)=>{
-    console.log(message);
+    socket.broadcast.emit('newMessage', generateMessage(message.from, message.text));
     callback('This is from the server');
   });
 });

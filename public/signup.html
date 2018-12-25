@@ -5,6 +5,7 @@
   <meta name = "description" content="">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="213402661081-neff15tf41rs2u28p2g3adm9t71of1h4.apps.googleusercontent.com">
   <link rel="icon" href="img/loli-logo.png" type="image/png" sizes="16x16">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/signup.css">
@@ -27,7 +28,7 @@
     <h3 class = "sub-headings">Sign up</h3>
     <div class = "twobuttons">
     <button style="color: white; background: #3b5998; margin-right: 0.5em">Sign up with Facebook</button>
-    <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71">Sign up with Google</button>
+    <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71" id ="g-signin">Sign up with Google</button>
   </div>
   <h3 class = "sub-headings">Or</h3>
   <form action="" method="post">
@@ -71,6 +72,34 @@
 </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
+<script>
+var googleUser = {};
+var startApp = function() {
+  gapi.load('auth2', function(){
+    // Retrieve the singleton for the GoogleAuth library and set up the client.
+    auth2 = gapi.auth2.init({
+      client_id: '213402661081-neff15tf41rs2u28p2g3adm9t71of1h4.apps.googleusercontent.com',
+      cookiepolicy: 'single_host_origin',
+      // Request scopes in addition to 'profile' and 'email'
+      //scope: 'additional_scope'
+    });
+    attachSignin(document.getElementById('g-signin'));
+  });
+};
+
+function attachSignin(element) {
+  console.log(element.id);
+  auth2.attachClickHandler(element, {},
+      function(googleUser) {
+        document.getElementById('name').innerText = "Signed in: " +
+            googleUser.getBasicProfile().getName();
+      }, function(error) {
+        alert(JSON.stringify(error, undefined, 2));
+      });
+}
+</script>
 <script type="text/javascript" src="js/validatesignup.js"></script>
+<script>startApp();</script>
 </body>
 </html>
