@@ -11,12 +11,14 @@ const path = require('path');
 const publicPath = path.join(__dirname, '../public');
 const socketIO = require('socket.io');
 const http = require('http');
-const {generateMessage} = require('./utils/message.js')
+const {generateMessage} = require('./utils/message.js');
+const {verify} = require('./middleware/googleverify.js');
 
 
 
 const port = process.env.PORT;
 let app = express();
+app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 app.use(cookieParser());
 app.use(express.static(publicPath));
@@ -44,8 +46,11 @@ app.get('/categories.js', (req, res)=>{
 
 
 app.post('/signup', (req, res)=>{
+  let ss = req.body.fullname.trim().replace(' ', '-');
+  let user_name = ss + '-' + new Date().getTime();
  let user = new User({
-   username: req.body.username,
+   fullname: req.body.fullname,
+   username: user_name,
    password: req.body.password,
    emailid: req.body.emailid,
    active: false
@@ -65,12 +70,45 @@ app.post('/signup', (req, res)=>{
 });
 });
 
+app.get('/signup', (req, res)=>{
+  res.redirect('/signup.html');
+});
 
+
+app.post('/g-auth', (req, res)=>{
+  verify(req.body.idtoken)
+  .then(()=>{console.log(req.body.emailid);
+    User.findOne({emailid: req.body.emailid}, (err, doc)=>{
+      if(doc)
+      {
+        let token = doc.generateAuthToken();
+        res.cookie('x-auth', token).send(doc);
+      }
+      else{
+        let ss = req.body.fullname.replace(' ', '-');
+        let user_name = ss + '-' + new Date().getTime();
+        let user = new User({
+         fullname: req.body.fullname,
+         username: user_name,
+         emailid: req.body.emailid,
+         active: true
+       });
+       user.save((err)=>{
+         if(err)
+         console.log(err);
+       });
+       let token = user.generateAuthToken();
+       res.cookie('x-auth', token).send(user);
+      }
+    });
+  })
+  .catch(console.error);
+});
 
 
 app.post('/login', (req, res)=>{
-  let body = _.pick(req.body, ["username", "password"]);
-  User.findByCredentials(body.username, body.password).then((user)=>{
+  let body = _.pick(req.body, ["emailid", "password"]);
+  User.findByCredentials(body.emailid, body.password).then((user)=>{
     return user.generateAuthToken().then((token)=>{
       res.cookie('x-auth', token).send(user);
     });
@@ -79,7 +117,9 @@ app.post('/login', (req, res)=>{
   });
 });
 
-
+app.get('/login', (req, res)=>{
+  res.redirect('/login.html');
+});
 
 
 app.delete('/login', authenticate, (req, res)=>{

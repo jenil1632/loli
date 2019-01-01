@@ -31,8 +31,8 @@
     <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71" id ="g-signin">Sign up with Google</button>
   </div>
   <h3 class = "sub-headings">Or</h3>
-  <form action="" method="post">
-    <input type="text" name="username" id = "username" placeholder="Username" required/>
+  <form action="/signup" method="post">
+    <input type="text" name="fullname" id = "fullname" placeholder="Full name" required/>
     <input type="email" name="emailid" id = "emailid" placeholder="Email id" required/>
     <input type="password" name="password" id = "password" placeholder="Password" required/>
     <input type="password" name="confirmpassword" id = "confirmpassword" placeholder="Confirm password" required/>
@@ -73,33 +73,8 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://apis.google.com/js/api:client.js"></script>
-<script>
-var googleUser = {};
-var startApp = function() {
-  gapi.load('auth2', function(){
-    // Retrieve the singleton for the GoogleAuth library and set up the client.
-    auth2 = gapi.auth2.init({
-      client_id: '213402661081-neff15tf41rs2u28p2g3adm9t71of1h4.apps.googleusercontent.com',
-      cookiepolicy: 'single_host_origin',
-      // Request scopes in addition to 'profile' and 'email'
-      //scope: 'additional_scope'
-    });
-    attachSignin(document.getElementById('g-signin'));
-  });
-};
-
-function attachSignin(element) {
-  console.log(element.id);
-  auth2.attachClickHandler(element, {},
-      function(googleUser) {
-        document.getElementById('name').innerText = "Signed in: " +
-            googleUser.getBasicProfile().getName();
-      }, function(error) {
-        alert(JSON.stringify(error, undefined, 2));
-      });
-}
-</script>
-<script type="text/javascript" src="js/validatesignup.js"></script>
+<script type="text/javascript" src="js/google-auth.js"></script>
+<!-- <script type="text/javascript" src="js/validatesignup.js"></script> -->
 <script>startApp();</script>
 </body>
 </html>

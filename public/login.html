@@ -5,6 +5,7 @@
   <meta name = "description" content="">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="213402661081-neff15tf41rs2u28p2g3adm9t71of1h4.apps.googleusercontent.com">
   <link rel="icon" href="img/loli-logo.png" type="image/png" sizes="16x16">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/signup.css">
@@ -27,11 +28,11 @@
     <h3 class = "sub-headings">Log in</h3>
     <div class = "twobuttons">
     <button style="color: white; background: #3b5998; margin-right: 0.5em">Log in with Facebook</button>
-    <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71">Log in with Google</button>
+    <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71" id = "g-signin">Log in with Google</button>
   </div>
   <h3 class = "sub-headings">Or</h3>
-  <form action="">
-    <input type="text" name="username" placeholder="Username" required/>
+  <form action="/login" method="post">
+    <input type="text" name="emailid" placeholder="Email id" required/>
     <input type="password" name="password" placeholder="Password" required/>
     <div id = "cover" style="display: flex">
     <input type="checkbox" name="termsandconditions" required style = "margin-left: 0; margin-right: 4px"/><span style="font-size: 14px; margin-top: 8px; display: inline-block">Remember me</span>
@@ -73,5 +74,9 @@
   &copy; 2018 The Local Listing App. All rights reserved.</p>
 </div>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
+<script type="text/javascript" src="js/google-auth.js"></script>
+<script>startApp();</script>
 </body>
 </html>

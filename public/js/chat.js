@@ -21,7 +21,9 @@ socket.on('newMessage', function(message){
 
 $('form').on('submit', function(e){
   e.preventDefault();
-  let message_value = $('textarea').val();
+  let message_value = $('textarea').val().trim();
+  if(message_value=='')
+  return ;
   socket.emit('createMessage', {
     from: 'User',
     text: message_value

@@ -46,12 +46,12 @@ function validatePasswords()
 
 function validateUsername()
 {
-  let username = $('#username').val();
-  if(username.includes(' ') || username.includes('/') || username.includes('\\') || username.includes(':') || username.includes('*') || username.includes('?') || username.includes('\"') || username.includes('<') || username.includes('>') || username.includes('|') || username.includes('=') || username.includes(';') || username.includes(','))
+  let username = $('#fullname').val();
+  if(username.includes('/') || username.includes('\\') || username.includes(':') || username.includes('*') || username.includes('?') || username.includes('\"') || username.includes('<') || username.includes('>') || username.includes('|') || username.includes('=') || username.includes(';') || username.includes(','))
   {
-    $("#username").addClass("redborder");
-    let $message = $('<span class ="tips">Please enter a valid Username. Only special characters [!, @, #, $, %, ^, &, (, ), +, ., _, -] are allowed. Spaces are not allowed!</span>');
-    $("#username").after($message);
+    $("#fullname").addClass("redborder");
+    let $message = $('<span class ="tips">Please enter a valid name. Only special characters [!, @, #, $, %, ^, &, (, ), +, ., _, -] are allowed.</span>');
+    $("#fullname").after($message);
     return false;
   }
   else {
@@ -61,7 +61,7 @@ function validateUsername()
 
 $('form').submit(function(event){
   let formdata = {
-    "username": $('#username').val(),
+    "fullname": $('#fullname').val(),
     "password": $('#password').val(),
     "emailid": $('#emailid').val()
   };
@@ -88,12 +88,6 @@ $('form').submit(function(event){
           let $message = $('<span class ="tips">Password should be longer than 7 characters!</span>');
           $("#password").after($message);
         }
-        else if(xhr.responseText.includes('username'))
-        {
-          $("#username").addClass("redborder");
-          let $message = $('<span class ="tips">Username already taken!</span>');
-          $("#username").after($message);
-        }
         else if(xhr.responseText.includes('emailid'))
         {
           $("#emailid").addClass("redborder");
@@ -102,9 +96,9 @@ $('form').submit(function(event){
         }
         else
         {
-          $("#username").addClass("redborder");
-          let $message = $('<span class ="tips">Username is not valid.</span>');
-          $("#username").after($message);
+          $("#fullname").addClass("redborder");
+          let $message = $('<span class ="tips">name is not valid.</span>');
+          $("#fullname").after($message);
         }
     }
   );

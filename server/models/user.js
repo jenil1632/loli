@@ -11,18 +11,23 @@ let UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 1,
-    maxlength: 20,
-    unique: true,
+    unique: true
+  },
+  fullname: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 1,
+    maxlength: 40,
     validate: {
       validator: function(v) {
-        return /^[a-zA-Z0-9!@#\$%\^\&\)\(+._-]+$/g.test(v);
+        return /^[a-zA-Z0-9! @#\$%\^\&\)\(+._-]+$/g.test(v);
       },
-      message: '{VALUE} is not a valid userv!'
+      message: '{VALUE} is not a valid full name!'
     }
   },
   password: {
     type: String,
-    required: true,
     minlength: 8,
     trim: true
   },
@@ -138,9 +143,9 @@ UserSchema.statics.findByToken = function(token){
   });
 };
 
-UserSchema.statics.findByCredentials = function(username, password){
+UserSchema.statics.findByCredentials = function(emailid, password){
   let User = this;
-   return User.findOne({username}).then((user)=>{
+   return User.findOne({emailid}).then((user)=>{
      if(!user)
      {
        return Promise.reject();
