@@ -77,15 +77,12 @@ app.get('/signup', (req, res)=>{
 
 app.post('/g-auth', (req, res)=>{
   verify(req.body.idtoken)
-  .then(()=>{console.log(req.body.emailid);
-    User.findOne({emailid: req.body.emailid}, (err, doc)=>{
-      if(doc)
-      {
-        let token = doc.generateAuthToken();
-        res.cookie('x-auth', token).send(doc);
-      }
-      else{
-        let ss = req.body.fullname.replace(' ', '-');
+  .then(()=>{
+  return User.findOne({emailid: req.body.emailid})
+}).then((user)=>{
+  if(!user)
+  {
+    let ss = req.body.fullname.replace(' ', '-');
         let user_name = ss + '-' + new Date().getTime();
         let user = new User({
          fullname: req.body.fullname,
@@ -93,15 +90,12 @@ app.post('/g-auth', (req, res)=>{
          emailid: req.body.emailid,
          active: true
        });
-       user.save((err)=>{
-         if(err)
-         console.log(err);
-       });
-       let token = user.generateAuthToken();
-       res.cookie('x-auth', token).send(user);
-      }
-    });
-  })
+       return user.save();
+  }
+}).then((user)=>{
+  let token = user.generateAuthToken();
+  res.cookie('x-auth', token).send(user);
+})
   .catch(console.error);
 });
 
