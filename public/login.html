@@ -13,6 +13,26 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '382408252564107',
+      cookie           : true,
+      autoLogAppEvents : true,
+      xfbml            : false,
+      version          : 'v3.2'
+    });
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  </script>
   <header>
     <div id = "top-bar">
       <img src = "img/loli-logo.svg" alt = "Loli logo" height="40" width="40" id = "loli-logo"/>
@@ -27,7 +47,7 @@
   <div id = "container">
     <h3 class = "sub-headings">Log in</h3>
     <div class = "twobuttons">
-    <button style="color: white; background: #3b5998; margin-right: 0.5em">Log in with Facebook</button>
+    <button style="color: white; background: #3b5998; margin-right: 0.5em" id = "fb-signin">Log in with Facebook</button>
     <button style="color: #6d6e71; background: white; border: 1px solid #6d6e71" id = "g-signin">Log in with Google</button>
   </div>
   <h3 class = "sub-headings">Or</h3>
@@ -77,6 +97,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://apis.google.com/js/api:client.js"></script>
 <script type="text/javascript" src="js/google-auth.js"></script>
+<script type="text/javascript" src="js/fb-auth.js"></script>
 <script>startApp();</script>
 </body>
 </html>

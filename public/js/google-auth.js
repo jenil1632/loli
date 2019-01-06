@@ -1,12 +1,9 @@
 var googleUser = {};
 var startApp = function() {
   gapi.load('auth2', function(){
-    // Retrieve the singleton for the GoogleAuth library and set up the client.
-    auth2 = gapi.auth2.init({
+      auth2 = gapi.auth2.init({
       client_id: '213402661081-neff15tf41rs2u28p2g3adm9t71of1h4.apps.googleusercontent.com',
       cookiepolicy: 'single_host_origin',
-      // Request scopes in addition to 'profile' and 'email'
-      //scope: 'additional_scope'
     });
     attachSignin(document.getElementById('g-signin'));
   });
@@ -15,9 +12,7 @@ var startApp = function() {
 function attachSignin(element) {
   auth2.attachClickHandler(element, {},
       function(googleUser) {
-        //document.getElementById('name').innerText = "Signed in: " +
-          //  googleUser.getBasicProfile().getName();
-          onSignIn(googleUser);
+         onSignIn(googleUser);
       }, function(error) {
         alert(JSON.stringify(error, undefined, 2));
       });

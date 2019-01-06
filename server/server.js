@@ -13,7 +13,7 @@ const socketIO = require('socket.io');
 const http = require('http');
 const {generateMessage} = require('./utils/message.js');
 const {verify} = require('./middleware/googleverify.js');
-
+const {fb_verify} = require('./middleware/facebookverify.js');
 
 
 const port = process.env.PORT;
@@ -97,6 +97,31 @@ app.post('/g-auth', (req, res)=>{
   res.cookie('x-auth', token).send(user);
 })
   .catch(console.error);
+});
+
+app.post('/fb-auth', (req, res)=>{
+  let user_id = fb_verify(req.body.idtoken);console.log('user_id:' + user_id);
+  if(user_id)
+  {
+    User.findOne({emailid: req.body.emailid}).then((user)=>{
+      if(!user)
+      {
+        let ss = req.body.fullname.replace(' ', '-');
+            let user_name = ss + '-' + new Date().getTime();
+            let user = new User({
+             fullname: req.body.fullname,
+             username: user_name,
+             emailid: req.body.emailid,
+             active: true
+           });
+           return user.save();
+      }
+    }).then((user)=>{
+      let token = user.generateAuthToken();
+      res.cookie('x-auth', token).send(user);
+    })
+      .catch(console.error);
+  }
 });
 
 
