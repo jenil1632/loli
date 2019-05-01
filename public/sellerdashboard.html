@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Seller Dashboard | Loli - The Local Listing App</title>
+  <meta name = "description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/loli-logo.png" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/seller-dashboard.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div id = "top-bar">
+      <img src = "img/logo-white.svg" alt = "Loli logo" id = "loli-logo"/>
+      <div id ="nav-search">
+      <select id = "city">
+        <option value="mumbai">Mumbai</option>
+        <option value="pune">Pune</option>
+      </select>
+      <div id = "searchbar-container">
+        <input value="Desserts" id ="searchbarres"/>
+        <img src = "img/search-icon-white.svg" alt="search" id ="search-icon"/>
+      </div>
+    </div>
+      <img src="img/search-icon.svg" alt = "search" height="40" width="40" id = "search-icon-mobile"/>
+    <img src="img/account-white.svg" alt = "account" height="25" width="25" id = "account-icon"/>
+    <a href="#" id = "account-link">Account</a>
+    <select id ="language">
+      <option value="English" selected>English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    </div>
+  </header>
+  <div id = "container">
+    <form method="post" action="">
+      <div id ="submitDiv">
+        <div class = "submitquestionDiv">
+        <span>Kindly fill-in/edit your profile details</span>
+        <div class = "submitButtonsDiv">
+        <button>Cancel</button>
+        <button style="background-color: green; color:white; border: green">Save</button>
+      </div>
+      </div>
+        <hr>
+        <div class = "submitquestionDiv">
+        <div>
+        <span>Seller account type: </span>
+        <span style="font-weight:300">Basic</span>
+      </div>
+      <div class = "submitButtonsDiv">
+        <button>Upgrade</button>
+        <a href="" style="font-weight: 400; color: #d63322;">see plans</a>
+      </div>
+      </div>
+    </div>
+    <div class = "result">
+      <div class = "image-container">
+      <img src = "img/test1.jpg" class = "main-photo grid-photo"/>
+    </div>
+    <div class ="info">
+      <input type="text" placeholder="Business Name" required style="margin-bottom: 8px;"/>
+      <h6 class = "product-heading">Products: </h6>
+      <textarea placeholder="Product List"></textarea>
+      <div class = "call-numbers">
+        <img src = "img/button-call-white.svg" class="call white"/>
+        <input type="text" placeholder="Contact numbers" required/>
+      </div>
+      <div class = "whatsapp-numbers">
+        <img src = "img/whatsapp-icon-green.svg" class="whatsapp"/>
+        <input type="text" style="width: 50px; margin-right: 4px" value="+91"/>
+        <span>-</span>
+        <input type="number" placeholder="whatsapp number" style="margin-left: 4px"/>
+      </div>
+    </div>
+      </div>
+      <div class = "seller-details">
+        <div id = "main-content">
+        <div id = "section-headers">
+        <div class = "section-heading selected" id = "overview-heading">Overview</div>
+        <div class = "section-heading" id = "photo-heading">Photos</div>
+        </div>
+        <div id = "overview">
+      <h3 class = "red-heading" style="margin-top: 0">Overview</h3>
+      <hr>
+      <div class = "business-area">
+      <div class = "overview-box" id = "ba">
+      <h5>Address</h5>
+      <textarea>Enter your Address here</textarea>
+    </div>
+    <div class = "overview-box">
+      <h5>Area of Business</h5>
+      <textarea>Enter your Area of business here</textarea>
+    </div>
+  </div>
+    <div class = "overview-box">
+      <h5>Website</h5>
+      <input type="text" placeholder="Enter your Website here"/>
+    </div>
+    <div class = "overview-box">
+      <h5>Social media</h5>
+      <div id = "socialMediaLinks">
+       <span id = "addSocialMedia">+ Add More</span>
+      </div>
+    </div>
+    <div class = "overview-box">
+      <h5>About</h5>
+      <textarea>Tell us something about yourself</textarea>
+    </div>
+    </div>
+    <div id = "photo-container">
+      <h3 class = "red-heading">Photos</h3>
+      <hr>
+      <div id = "photos">
+      <img src="img/test2.jpg" class = "seller-photos"/>
+      <img src="img/test3.jpg" class = "seller-photos"/>
+      <img src="img/test4.jpg" class = "seller-photos"/>
+      <img src="img/add-image.png" class = "seller-photos" id = "add-image" title="Add images"/>
+      <input type="file" id = "imageUpload" accept="image/*" multiple="multiple"/>
+    </div>
+    </div>
+  </div>
+        </div>
+      </form>
+
+</div>
+<footer>
+  <div id = "footer-nav">
+  <div id = "links">
+    <div id = "left-container">
+    <a href="">About Us</a>
+    <a href="">Feedback</a>
+    <a href="">Contact</a>
+  </div>
+    <div id = "right-container">
+    <a href="">Register as Seller</a>
+    <a href="">Advertise with Loli</a>
+    <a href="">Blogs</a>
+  </div>
+  </div>
+  <div id = "social-media">
+    <img src ="img/social-fb.svg" alt="facebook"/>
+    <img src ="img/social-instagram.svg" alt="instagram"/>
+    <img src ="img/social-youtube.svg" alt="youtube"/>
+    <img src ="img/social-twitter.svg" alt="twitter"/>
+  </div>
+</div>
+  <hr id = "separator">
+  <div style = "background: #e6e7e8; overflow: auto">
+  <p id ="disclaimer">By continuing past this page, you agree to our Terms of Service, Cookie policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners.<br>
+  &copy; 2018 The Local Listing App. All rights reserved.</p>
+</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/seller-dashboard.js"></script>
+</body>
+</html>

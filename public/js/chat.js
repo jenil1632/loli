@@ -17,26 +17,15 @@ socket.on('newMessage', function(message){
 });
 
 
-
+$('.input-box').on('keydown', (e)=>{
+  if(e.which==13){
+    writeMessage();
+  }
+});
 
 $('form').on('submit', function(e){
   e.preventDefault();
-  let message_value = $('textarea').val().trim();
-  if(message_value=='')
-  return ;
-  socket.emit('createMessage', {
-    from: 'User',
-    text: message_value
-  }, function(data){
-    $('textarea').val('');
-    let template = $('#message-template-1').html();
-    let html = Mustache.render(template, {
-      text: message_value,
-      createdAt: moment(data.createdAt).format('h:mm a')
-    });
-    $('#message-list').append(html);
-    scrollToBottom();
-  });
+  writeMessage();
 });
 
 function scrollToBottom () {
@@ -54,4 +43,23 @@ function scrollToBottom () {
   if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
     conversation.scrollTop(scrollHeight);
   }
+}
+
+function writeMessage(){
+  let message_value = $('textarea').val().trim();
+  if(message_value=='')
+  return ;
+  socket.emit('createMessage', {
+    from: 'User',
+    text: message_value
+  }, function(data){
+    $('textarea').val('');
+    let template = $('#message-template-1').html();
+    let html = Mustache.render(template, {
+      text: message_value,
+      createdAt: moment(data.createdAt).format('h:mm a')
+    });
+    $('#message-list').append(html);
+    scrollToBottom();
+  });
 }
