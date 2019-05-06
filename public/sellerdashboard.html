@@ -61,7 +61,13 @@
     </div>
     <div class = "result">
       <div class = "image-container">
+        <div class = "image-outline">
       <img src = "img/test1.jpg" class = "main-photo grid-photo"/>
+      <div id = 'profilePhotoButtons'>
+        <button type="button" class = 'profilePhotoButton'>Change</button>
+        <button type="button" class = 'profilePhotoButton'>Remove</button>
+      </div>
+    </div>
     </div>
     <div class ="info">
       <input type="text" placeholder="Business Name" required style="margin-bottom: 8px;"/>
@@ -91,11 +97,11 @@
       <div class = "business-area">
       <div class = "overview-box" id = "ba">
       <h5>Address</h5>
-      <textarea>Enter your Address here</textarea>
+      <textarea placeholder="Enter your Address here"></textarea>
     </div>
     <div class = "overview-box">
       <h5>Area of Business</h5>
-      <textarea>Enter your Area of business here</textarea>
+      <textarea placeholder="Enter your Area of business here"></textarea>
     </div>
   </div>
     <div class = "overview-box">
@@ -110,16 +116,22 @@
     </div>
     <div class = "overview-box">
       <h5>About</h5>
-      <textarea>Tell us something about yourself</textarea>
+      <textarea placeholder="Tell us something about yourself"></textarea>
     </div>
     </div>
     <div id = "photo-container">
       <h3 class = "red-heading">Photos</h3>
       <hr>
       <div id = "photos">
+        <div class = "seller-photo-outline">
       <img src="img/test2.jpg" class = "seller-photos"/>
+    </div>
+      <div class = "seller-photo-outline">
       <img src="img/test3.jpg" class = "seller-photos"/>
+      </div>
+        <div class = "seller-photo-outline">
       <img src="img/test4.jpg" class = "seller-photos"/>
+      </div>
       <img src="img/add-image.png" class = "seller-photos" id = "add-image" title="Add images"/>
       <input type="file" id = "imageUpload" accept="image/*" multiple="multiple"/>
     </div>

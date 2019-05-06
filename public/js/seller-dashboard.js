@@ -38,7 +38,7 @@ let modalString = '<div id = "reviewBox"><h3 class = "modal-heading">Select a pl
 $('#addSocialMedia').on('click', ()=>{
     let str = "";
     for(let i = 0;i<sm.length;i++){
-      str += `<img src = "img/social-${sm[i]}.svg" id = "${sm[i]}"style = "height: 35px; width: 35px; margin: 8px"/>`;
+      str += `<img src = "img/social-${sm[i]}.svg" id = "${sm[i]}" class = "social-media-icon"/>`;
     }
     modalString += str;
     modalString += "</div></div>";
@@ -99,4 +99,23 @@ $('#addSocialMedia').on('click', ()=>{
 
 $('#add-image').on('click', ()=>{
   $('#imageUpload').click();
+});
+
+$('.image-outline').on('mouseenter', ()=>{
+  $('.main-photo').css({'opacity':0.3});
+  $('#profilePhotoButtons').show();
+});
+
+$('.image-outline').on('mouseleave', ()=>{
+  $('#profilePhotoButtons').hide();
+  $('.main-photo').css({'opacity':1});
+});
+
+$('.seller-photo-outline').on('mouseenter', function(){
+  $(this).children().first().css({'opacity':0.6});
+  let $removeButton = $('<img src = "img/circle-close.png" height = "20px" width = "20px" class = "removeSellerPhoto" title = "Remove"/>');
+  $(this).append($removeButton);
+}).on('mouseleave', function(){
+  $(this).children().first().css({'opacity':1});
+  $(this).children().last().remove();
 });

@@ -44,13 +44,6 @@ header{
   font-size: 14px;
 }
 
-.rating{
-  font-size: 14px;
-  margin-top: 0.5em;
-  display: inline-block;
-  margin-right: 0.5em;
-}
-
 .whatsapp{
   border-radius: 5px;
   background-color: white;
@@ -77,14 +70,6 @@ header{
   font-size: 15px;
   font-weight: 700;
   color: #414012;
-}
-
-.button-seller{
-  width: 94%;
-  background-color: #d63322;
-  color: white;
-  border: none;
-  margin-bottom: 0.5em;
 }
 
 .seller-details{
@@ -114,41 +99,6 @@ header{
   color: #414042;
   font-weight: 700;
   text-align: center;
-}
-
-#button-message{
-  display: block;
-  margin: 0 auto 0.5em;
-}
-
-#message-box{
-  display: none;
-  margin-left: 16px;
-  max-width: 30%;
-}
-
-#message-header{
-  color: white;
-  background-color: #d63322;
-}
-
-.input-bar{
-  display: flex;
-  align-items: center;
-}
-
-#send{
-  background-color: #d63322;
-  border: none;
-  border-radius: 5px;
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-.input-box{
-  height: 60px;
-  border: none;
-  resize: none;
 }
 
 .red-heading{
@@ -195,66 +145,8 @@ padding-right: 16px;
   object-fit: cover;
 }
 
-.user-review{
-  background-color: white;
-  margin-left: 16px;
-  margin-right: 16px;
-  border-radius: 10px;
-  padding-top: 16px;
-}
-
-.user-review h4{
-  margin-top: 0;
-  margin-left: 16px;
-}
-
-.review-header{
-  display: flex;
-}
-
-#reviews p{
-  margin-top: 0;
-  padding-left: 16px;
-  padding-right: 8px;
-  padding-bottom: 12px;
-  color: #414042;
-}
-
-.rating-value{
-  margin-right: 16px;
-  margin-left: 8px;
-}
-
-.myRating{
-  margin-left: auto;
-  color: #414042;
-}
-
-#review-button{
-  margin-left: 16px;
-  margin-bottom: 16px;
-  font-weight: 700;
-}
-
-.review-button-arrow{
-  transform: rotate(270deg);
-  margin-left: 25px;
-}
-
 #overview-heading:hover, #photo-heading:hover, #review-heading:hover, #addSocialMedia:hover{
   cursor: pointer;
-}
-
-#reportSeller{
-  text-decoration: none;
-  color: #414042;
-  margin-right: auto;
-  margin-bottom: 16px;
-}
-
-#report-icon{
-  margin-left: 16px;
-  margin-right: 4px;
 }
 
 #overlay-review, #overlay-report{
@@ -282,52 +174,12 @@ padding-right: 16px;
   padding-top: 16px;
 }
 
-.star{
-  height: 22px;
-  width: 22px;
-  padding-right: 5px;
-}
-
-.modal-content{
-  display: block;
-  margin: 16px auto;
-  width: 85%;
-  border-radius: 10px;
-  height: 150px;
-  resize: none;
-  padding: 8px;
-}
-
 .close{
   height: 15px;
   width: 15px;
   position: absolute;
   top: 16px;
   right: 16px;
-}
-
-#myRatingvalue{
-  color: #d63322;
-  font-weight: 700;
-  padding-left: 8px;
-  font-size: 18px;
-  display: inline-block;
-}
-
-#modalsubmit{
-  border: none;
-  color: white;
-  margin: 16px auto;
-  display: block;
-  background-color: #d63322;
-}
-
-.reportValue{
-  padding-left: 16px;
-}
-
-input[type="radio"]{
-  margin-bottom: 16px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -395,10 +247,48 @@ textarea{
   display: none;
 }
 
-#add-image:hover{
+#add-image:hover, .close:hover{
   cursor: pointer;
+  opacity: 0.5;
+  transition-duration: 1s;
+  transition-property: opacity;
 }
 
+.social-media-icon{
+  height: 35px;
+  width: 35px;
+  margin: 8px;
+}
+
+.social-media-icon:hover{
+  cursor: pointer;
+  opacity: 0.5;
+  transition-duration: 1s;
+  transition-property: opacity;
+}
+
+#profilePhotoButtons{
+display: none;
+position: absolute;
+z-index: 100;
+top: 40%;
+left: 10%;
+}
+
+.image-outline, .seller-photo-outline{
+    position: relative;
+}
+
+.removeSellerPhoto{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 25;
+}
+
+.removeSellerPhoto:hover{
+  cursor: pointer;
+}
 
 /* media queries */
 
@@ -435,39 +325,9 @@ textarea{
     margin-right: 16px;
   }
 
-  .badge-container{
-    margin-left: auto;
-    align-self: flex-start;
-    padding-top: 20px;
-    padding-right: 16px;
-  }
-
-  .dummy{
-    display: block;
-  }
-
-  .badge{
-    display: none;
-  }
-
-  .badgename{
-    display: block;
-  }
-
-  #button-message{
-    display: none;
-  }
-
   #section-headers{
     display: flex;
     justify-content: space-around;
-  }
-
-  #message-box{
-    display: block;
-    margin-top: 16px;
-    margin-right: 16px;
-    max-width: 250px;
   }
 
   .seller-details{
@@ -496,40 +356,6 @@ textarea{
     max-width: 50%;
   }
 
-  #conversation{
-    margin-top: 16px;
-    background-color: white;
-    height: 300px;
-    overflow: auto;
-    margin-bottom: 16px;
-  }
-
-  ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .text-message{
-    padding: 8px;
-    margin: 8px;
-    max-width: 80%;
-    border-radius: 12px;
-    background-color: #f1f1f2;
-  }
-
-  .message-self{
-    align-self: flex-end;
-    margin-right: 8px;
-  }
-
-  .button-seller{
-    display: none;
-  }
-
   #photo-container, #reviews{
     display: none;
     padding-top: 20px;
@@ -550,10 +376,6 @@ textarea{
   .overview-box{
     padding-left: 24px;
     flex-grow: 1
-  }
-
-  .user-review, #review-button{
-    margin-left: 24px;
   }
 
   .submitquestionDiv{
@@ -625,15 +447,6 @@ textarea{
 
   #product-list{
     font-size: 16px;
-  }
-
-  .rating{
-    font-size: 16px;
-    margin-top: 12px;
-  }
-
-  .rating-value{
-    font-size: 20px;
   }
 
   .numbers{
