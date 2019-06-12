@@ -5,6 +5,8 @@ const _ = require('lodash');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 
+
+//Normal user database schema (only login info)
 let UserSchema = new mongoose.Schema({
   username: {
     type: String,

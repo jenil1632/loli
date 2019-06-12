@@ -26,7 +26,7 @@ let server = http.createServer(app);
 let io = socketIO(server);
 
 
-
+//suggestions displayed on main search bar
 app.get('/categories.js', (req, res)=>{
   let svalue = req.query.svalue;
   svalue = svalue.toLowerCase();
@@ -44,7 +44,7 @@ app.get('/categories.js', (req, res)=>{
 });
 
 
-
+//signup
 app.post('/signup', (req, res)=>{
   let ss = req.body.fullname.trim().replace(' ', '-');
   let user_name = ss + '-' + new Date().getTime();
@@ -75,6 +75,7 @@ app.get('/signup', (req, res)=>{
 });
 
 
+//google authentication
 app.post('/g-auth', (req, res)=>{
   verify(req.body.idtoken)
   .then(()=>{
@@ -99,6 +100,8 @@ app.post('/g-auth', (req, res)=>{
   .catch(console.error);
 });
 
+
+//facebook authentication
 app.post('/fb-auth', (req, res)=>{
   let user_id = fb_verify(req.body.idtoken);console.log('user_id:' + user_id);
   if(user_id)
@@ -125,6 +128,7 @@ app.post('/fb-auth', (req, res)=>{
 });
 
 
+//login authentication
 app.post('/login', (req, res)=>{
   let body = _.pick(req.body, ["emailid", "password"]);
   User.findByCredentials(body.emailid, body.password).then((user)=>{
@@ -136,11 +140,14 @@ app.post('/login', (req, res)=>{
   });
 });
 
+
+//redirection to login page
 app.get('/login', (req, res)=>{
   res.redirect('/login.html');
 });
 
 
+//logout
 app.delete('/login', authenticate, (req, res)=>{
   req.user.removeToken(req.token).then(()=>{
     res.clearCookie('x-auth');
@@ -152,7 +159,7 @@ app.delete('/login', authenticate, (req, res)=>{
 
 
 
-
+//email verification successful
 app.get('/verify', (req, res)=>{
   User.findById(req.query._id, { $set: {active: true}}, (err, user)=>{
     if(err)
@@ -163,6 +170,7 @@ app.get('/verify', (req, res)=>{
 });
 
 
+//messaging app event listener
 io.on('connection', (socket)=>{
   console.log('new user Connected');
   socket.on('disconnect', ()=>{

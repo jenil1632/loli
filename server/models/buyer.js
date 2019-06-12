@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const _ = require('lodash');
 
+// Normal buyer database Schema containing personal details
 let UserSchema = new mongoose.Schema({
   username: {
     type: String,

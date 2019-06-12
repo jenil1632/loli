@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const _ = require('lodash');
 
-
+//Normal seller database schema
 let UserSchema = new mongoose.Schema({
   username: {
     type: String,
