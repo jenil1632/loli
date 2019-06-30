@@ -1,10 +1,13 @@
 require('./config/config.js');
+const fs = require('fs');
 const express = require('express');
 const {searchengine} = require('./searchengine.js');
 const _ = require('lodash');
 const {mongoose} = require('./db/mongoose.js');
 const bodyparser = require('body-parser');
+const multer = require('multer');
 const {User} = require('./models/user.js');
+const {Seller} = require('./models/seller.js');
 const {authenticate} = require('./middleware/authenticate.js');
 const cookieParser = require('cookie-parser');
 const path = require('path');
@@ -14,6 +17,8 @@ const http = require('http');
 const {generateMessage} = require('./utils/message.js');
 const {verify} = require('./middleware/googleverify.js');
 const {fb_verify} = require('./middleware/facebookverify.js');
+var upload = multer({ dest: 'uploads/' });
+var sellerUpdateUpload = upload.fields([{ name: 'profile_photo', maxCount: 1 }, { name: 'photo_list', maxCount: 25 }]);
 
 
 const port = process.env.PORT;
@@ -138,6 +143,57 @@ app.post('/login', (req, res)=>{
   }).catch((e)=>{
     res.status(400).send(e);
   });
+});
+
+app.post('/updateSeller', sellerUpdateUpload, (req, res)=>{
+  let profile_photo = fs.readFileSync(req.files.profile_photo[0].path);
+  let encoded_image = profile_photo.toString('base64');
+  let productImages = [];
+  for(let i=0; i<req.files.photo_list.length;i++){
+    let product_photo = fs.readFileSync(req.files.photo_list[i].path);
+    let encoded_product_photo = product_photo.toString('base64');
+    let storableImage = {
+      contentType: req.files.photo_list[i].mimetype,
+      image: new Buffer(encoded_product_photo, 'base64')
+    };
+    productImages.push(storableImage);
+    fs.unlink(req.files.photo_list[i].path, (err)=>{
+      if(err)
+      throw err;
+    });
+  }
+  let seller = new Seller({
+    username: req.body.username,
+    fullname: req.body.fullname,
+    mobilenumber: req.body.mobilenumber,
+    emailid: req.body.emailid,
+    business_name: req.body.business_name,
+    product_list: req.body.product_list,
+    business_address: req.body.business_address,
+    business_number: req.body.business_number,
+    area_of_business: req.body.area_of_business,
+    short_description: req.body.short_description,
+    long_description: req.body.long_description,
+    website: req.body.website,
+    fb: req.body.fb,
+    instagram: req.body.instagram,
+    youtube: req.body.youtube,
+    twitter: req.body.twitter,
+    verified: req.body.verified,
+    premium: req.body.premium,
+    profile_photo: {
+      contentType: req.files.profile_photo[0].mimetype,
+      image: new Buffer(encoded_image, 'base64')
+    },
+    photo_list: productImages
+  });
+  fs.unlink(req.files.profile_photo[0].path);
+  seller.save().then(()=>{
+    res.status(200).send();
+  })
+  .catch((e) =>{
+    res.status(400).send(e);
+ });
 });
 
 

@@ -135,14 +135,20 @@ header{
 }
 
 #photos{
+display: flex;
+flex-wrap: wrap;
 padding-left: 16px;
 padding-right: 16px;
 }
 
 .seller-photos{
-  width: 32%;
   height: 80px;
   object-fit: cover;
+  width: 100px;
+}
+
+#add-image-div{
+  margin: 4px;
 }
 
 #overview-heading:hover, #photo-heading:hover, #review-heading:hover, #addSocialMedia:hover{
@@ -279,6 +285,10 @@ left: 10%;
     position: relative;
 }
 
+.seller-photo-outline{
+  margin: 4px;
+}
+
 .removeSellerPhoto{
   position: absolute;
   top: 0;
@@ -362,8 +372,6 @@ left: 10%;
   }
 
   #photos{
-    display: flex;
-    flex-wrap: wrap;
     padding-left: 24px;
   }
 
@@ -371,6 +379,14 @@ left: 10%;
     width: 100px;
     height: 100px;
     margin: 4px;
+  }
+
+  .seller-photo-outline{
+    margin: 0;
+  }
+
+  #add-image-div{
+    margin: 0;
   }
 
   .overview-box{

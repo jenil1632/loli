@@ -24,15 +24,16 @@ let UserSchema = new mongoose.Schema({
     }
   },
   mobilenumber: {
-    type: Number,
+    type: [String],
     required: true,
     trim: true,
     validate: {
       validator: function(v) {
-        if(v.toString().length==10)
+        for(let i=0; i<v.length; i++){
+          if(v[i].length!=10 || /\D/.test(v[i]))
+          return false;
+        }
         return true;
-        else
-        return false;
       },
       message: '{VALUE} is not a valid mobile number!'
     }
@@ -41,25 +42,25 @@ let UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    minlength: 1,
+    minlength: 1
   },
   business_name: {
     type: String,
     required: true,
     trim: true,
-    minlength: 1
-    maxlength: 30,
+    minlength: 1,
+    maxlength: 30
   },
    product_list: {
      type: Array
    },
    business_number: {
-     type: Number,
+     type: String,
      required: true,
      trim: true,
      validate: {
        validator: function(v) {
-         if(v.toString().length==10 || v.toString()==8)
+         if(v.length==10 || /\D/.test(v[i]))
          return true;
          else
          return false;
@@ -80,12 +81,12 @@ let UserSchema = new mongoose.Schema({
    },
    short_description: {
      type: String,
-     maxlength: 50,
+     maxlength: 150,
      required: true
    },
    long_description: {
      type: String,
-     maxlength: 200
+     maxlength: 300
    },
    fb: {
      type: String
@@ -96,7 +97,7 @@ let UserSchema = new mongoose.Schema({
     twitter: {
       type: String
     },
-    snapchat: {
+    youtube: {
       type: String
     },
     website: {
@@ -131,11 +132,12 @@ let UserSchema = new mongoose.Schema({
       type: Boolean,
       required: true
     },
-    no_of_photos: {
-      type: Number,
-      required: true,
-      default: 0,
-      max: 25
+    profile_photo: {
+      contentType: String,
+      image: Buffer
+    },
+    photo_list: {
+      type: Array
     }
 });
 
