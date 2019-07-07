@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{pageTitle}} | Loli - The Local Listing App</title>
+  <meta name = "description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/loli-logo.png" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/results.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/seller-profile.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div id = "top-bar">
+      <img src = "/img/logo-white.svg" alt = "Loli logo" id = "loli-logo"/>
+      <div id ="nav-search">
+      <select id = "city">
+        <option value="mumbai">Mumbai</option>
+        <option value="pune">Pune</option>
+      </select>
+      <div id = "searchbar-container">
+        <input value="Desserts" id ="searchbarres"/>
+        <img src = "/img/search-icon-white.svg" alt="search" id ="search-icon"/>
+      </div>
+    </div>
+      <img src="/img/search-icon.svg" alt = "search" height="40" width="40" id = "search-icon-mobile"/>
+    <img src="/img/account-white.svg" alt = "account" height="25" width="25" id = "account-icon"/>
+    <a href="#" id = "account-link">Account</a>
+    <select id ="language">
+      <option value="English" selected>English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Gujarati">Gujarati</option>
+    </select>
+    </div>
+  </header>
+  <div id = "container">
+  <div style="margin-top: 24px;">
+    <div class = "result">
+      <div class = "image-container">
+      <img src = "{{profile_photo}}" class = "main-photo grid-photo"/>
+    </div>
+    <div class ="info">
+      <h4>{{business_name}}</h4>
+      <h6 class = "product-heading">Products: </h6>
+      {{#each product_list}}
+      <span id = "product-list">{{this}}, </span>
+      {{/each}}
+      <p style="margin: 0"><span class = "rating">Rating: </span><span class = "rating-value">4.8</span></p>
+      <div class = "call-numbers">
+        <img src = "/img/button-call-white.svg" class="call white"/>
+        {{#each mobilenumber}}
+        <span class = "numbers">{{this}}, </span>
+        {{/each}}
+      </div>
+      <div class = "whatsapp-numbers">
+        <img src = "/img/whatsapp-icon-green.svg" class="whatsapp"/>
+        <span class = "numbers">{{business_number}}</span>
+      </div>
+    </div>
+    <div class = "badge-container">
+      {{#if premium}}
+      <img src = "/img/badge-premium.svg" class = "dummy"/>
+    <span class = "badgename">Premium</span>
+    {{/if}}
+  </div>
+  {{#if premium}}
+    <img src = "/img/badge-premium.svg" class = "badge"/>
+    {{/if}}
+      </div>
+      <button class = "button-seller" id = "button-message">Message Seller</button>
+      <div class = "seller-details">
+        <div id = "main-content">
+        <div id = "section-headers">
+        <div class = "section-heading selected" id = "overview-heading">Overview</div>
+        <div class = "section-heading" id = "photo-heading">Photos</div>
+        <div class = "section-heading" id = "review-heading">Reviews</div>
+        </div>
+        <div id = "overview">
+      <h3 class = "red-heading" style="margin-top: 0">Overview</h3>
+      <hr>
+      <div class = "business-area">
+      <div class = "overview-box" id = "ba">
+      <h5>Address</h5>
+      <p>{{business_address}}</p>
+    </div>
+    <div class = "overview-box">
+      <h5>Area of Business</h5>
+      <p>{{area_of_business}}</p>
+    </div>
+  </div>
+    <div class = "overview-box">
+      <h5>Website</h5>
+      <p>{{website}}</p>
+    </div>
+    <div class = "overview-box">
+      <h5>Social media</h5>
+      <div>
+        <a href = "https://{{fb}}"><img src ="/img/social-fb.svg" alt="facebook"/></a>
+        <a href = "https://{{instagram}}"><img src ="/img/social-instagram.svg" alt="instagram"/></a>
+        <a href = "https://{{youtube}}"><img src ="/img/social-youtube.svg" alt="youtube"/></a>
+        <a href = "https://{{twitter}}"><img src ="/img/social-twitter.svg" alt="twitter"/></a>
+      </div>
+    </div>
+    <div class = "overview-box">
+      <h5>About</h5>
+      <p>{{long_description}}</p>
+    </div>
+    </div>
+    <div id = "photo-container">
+      <h3 class = "red-heading">Photos</h3>
+      <hr>
+      <div id = "photos">
+      {{#each photo_list}}
+      <img src="{{this}}" class = "seller-photos"/>
+      {{/each}}
+    </div>
+    </div>
+    <div id = "reviews">
+      <h3 class="red-heading">Reviews</h3>
+      <hr>
+      <div class = "user-review">
+        <div class = "review-header">
+        <h4>Jenil Shah</h4>
+        <span class = "myRating">Rated </span><span class = "rating-value">4/5</span>
+      </div>
+        <p>Great food and music!</p>
+      </div>
+      <div class = "user-review">
+        <div class = "review-header">
+        <h4>Khushi Gosar</h4>
+        <span class = "myRating">Rated </span><span class = "rating-value">5/5</span>
+      </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <button id = "review-button">Rate and Review <img src="/img/arrow-down.svg" height="12px" width="12px" class = "review-button-arrow"/></button>
+    </div>
+  </div>
+  <div id = "message-box">
+    <div id = "message-header" class = "section-heading">Message Box</div>
+    <div id = "conversation">
+    <ul id = "message-list"></ul>
+    </div>
+    <div class = "input-bar">
+      <form style="display:flex; align-items: center; width: 100%">
+    <textarea class = "input-box" placeholder="Type your message here" style="padding: 4px"></textarea>
+    <button id = "send" type="submit"><img src="/img/arrow-right.svg" height="12px" width="12px"/></button>
+  </form>
+  </div>
+  </div>
+        </div>
+        <div style="display: flex">
+        <img src="/img/report-icon.svg" height="20px" width="20px" id = "report-icon"/><a href=# id = "reportSeller">Report Seller</a>
+      </div>
+        <button class = "button-seller">More listings nearby</button>
+        <button class = "button-seller">More listings in same category</button>
+  </div>
+
+</div>
+{{>footer}}
+<script id ="message-template" type="text/template">
+<li class = "text-message">
+<span style="display: block; font-weight:700; font-size: 14px; word-break: break-word">{{text}}</span>
+<span style="display: block; font-size: 10px; text-align: right; padding-top: 4px">{{createdAt}}</span>
+</li>
+</script>
+<script id ="message-template-1" type="text/template">
+<li class = "text-message message-self">
+<span style="display: block; font-weight:700; font-size: 14px; word-break: break-word">{{text}}</span>
+<span style="display: block; font-size: 10px; text-align: right; padding-top: 4px">{{createdAt}}</span>
+</li>
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/seller-profile.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/moment.js"></script>
+<script src="/js/libs/mustache.js"></script>
+<script type="text/javascript" src="/js/chat.js"></script>
+</body>
+</html>

@@ -6,6 +6,8 @@ const _ = require('lodash');
 const {mongoose} = require('./db/mongoose.js');
 const bodyparser = require('body-parser');
 const multer = require('multer');
+const hbs = require('express-handlebars');
+const mergeJSON  = require ('merge-json') ;
 const {User} = require('./models/user.js');
 const {Seller} = require('./models/seller.js');
 const {authenticate} = require('./middleware/authenticate.js');
@@ -26,7 +28,10 @@ let app = express();
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 app.use(cookieParser());
-app.use(express.static(publicPath));
+app.use(express.static(publicPath, {extensions: ['html', 'htm']}));
+app.engine('.hbs', hbs({extname: '.hbs'}));
+app.set('views', __dirname+'/views')
+app.set('view engine', '.hbs');
 let server = http.createServer(app);
 let io = socketIO(server);
 
@@ -73,10 +78,6 @@ app.post('/signup', (req, res)=>{
  .catch((e) =>{
    res.status(400).send(e);
 });
-});
-
-app.get('/signup', (req, res)=>{
-  res.redirect('/signup.html');
 });
 
 
@@ -145,6 +146,8 @@ app.post('/login', (req, res)=>{
   });
 });
 
+
+//update seller information
 app.post('/updateSeller', sellerUpdateUpload, (req, res)=>{
   let profile_photo = fs.readFileSync(req.files.profile_photo[0].path);
   let encoded_image = profile_photo.toString('base64');
@@ -197,12 +200,6 @@ app.post('/updateSeller', sellerUpdateUpload, (req, res)=>{
 });
 
 
-//redirection to login page
-app.get('/login', (req, res)=>{
-  res.redirect('/login.html');
-});
-
-
 //logout
 app.delete('/login', authenticate, (req, res)=>{
   req.user.removeToken(req.token).then(()=>{
@@ -222,6 +219,23 @@ app.get('/verify', (req, res)=>{
     res.status(400).send();
     else
     res.status(200).send();
+  });
+});
+
+//get seller details
+app.get('/sellerprofile/:name', (req, res)=>{
+  Seller.find({}).lean().exec((err, seller)=>{
+    if(err)
+    res.status(400).send();
+    else{
+      seller[0].profile_photo =  `data:${seller[0].profile_photo.contentType};base64,${(seller[0].profile_photo.image).toString('base64')}`;
+      for(let i=0; i<seller[0].photo_list.length;i++){
+        seller[0].photo_list[i] = `data:${seller[0].photo_list[i].contentType};base64,${(seller[0].photo_list[i].image).toString('base64')}`;
+      }
+      let result = mergeJSON.merge({layout: false, pageTitle: "Seller Profile"}, seller[0]);
+    res.render('sellerprofile', result);
+  }
+    //res.status(200).send(seller[0]);
   });
 });
 
