@@ -7,7 +7,8 @@ socket.on('disconnect', function(){
 });
 
 socket.on('newMessage', function(message){
-  let template = $('#message-template').html();
+  let m1 = $('<div><li class = "text-message"><span style="display: block; font-weight:700; font-size: 14px; word-break:break-word">{{text}}</span>  <span style="display: block; font-size: 10px; text-align: right; padding-top: 4px">{{createdAt}}</span> </li></div>');
+  let template = m1.html();
   let html = Mustache.render(template, {
     text: message.text,
     createdAt: moment(message.createdAt).format('h:mm a')
@@ -54,7 +55,8 @@ function writeMessage(){
     text: message_value
   }, function(data){
     $('textarea').val('');
-    let template = $('#message-template-1').html();
+    let m2 = $('<div><li class = "text-message message-self"><span style="display: block; font-weight:700; font-size: 14px; word-break: break-word">{{text}}</span><span style="display: block; font-size: 10px; text-align: right; padding-top: 4px">{{createdAt}}</span></li></div>');
+    let template = m2.html();
     let html = Mustache.render(template, {
       text: message_value,
       createdAt: moment(data.createdAt).format('h:mm a')
